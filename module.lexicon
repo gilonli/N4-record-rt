@@ -1,0 +1,27 @@
+#
+# Lexicon for the record module.
+#
+
+alarmCount.json.api.timestamp=timeStamp
+alarmCount.json.api.tag=tag
+alarmCount.json.api.value=value
+alarmCount.json.api.startCount=startCount
+alarmCount.json.api.startFrom=startFrom
+alarmCount.json.api.endAt=endAt
+alarmCount.json.api.keptTime=keptTime
+
+runCount.json.api.timestamp=timeStamp
+runCount.json.api.tag=tag
+runCount.json.api.value=value
+runCount.json.api.startCount=startCount
+runCount.json.api.startFrom=startFrom
+runCount.json.api.endAt=endAt
+runCount.json.api.keptTime=keptTime
+
+energyHistory.json.api.name=name
+energyHistory.json.api.endAt=endAt
+energyHistory.json.api.tag=tag
+energyHistory.json.api.meterRead=meterRead
+energyHistory.json.api.cost=cost
+energyHistory.json.api.fee=fee
+energyHistory.json.api.bill=bill
