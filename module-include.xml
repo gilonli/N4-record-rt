@@ -3,6 +3,7 @@
 <types>
  <!--com.guardian.historyRecord-->
  <type class="com.guardian.historyRecord.enums.BHistoryRecordMethodEnum" name="HistoryRecordMethodEnum"/>
+ <type class="com.guardian.historyRecord.enums.BHistoryPolicyEnum" name="HistoryPolicyEnum"/>
  <type class="com.guardian.historyRecord.enums.BHistoryTagEnum" name="HistoryTagEnum"/>
  <type class="com.guardian.historyRecord.enums.BHistoryTypeEnum" name="HistoryTypeEnum"/>
  <type class="com.guardian.historyRecord.enums.BLogTypeEnum" name="LogTypeEnum"/>
