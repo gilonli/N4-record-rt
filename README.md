@@ -21,3 +21,12 @@
 
 | 名称 | 说明 |
 |:-------------:|:----------------:|
+| [AlarmCountHistoryRecord](./doc/records/AlarmCountHistory.md) | 报警统计记录 |
+| [BooleanHistoryRecord](./doc/records/BooleanHistory.md) | 布尔值记录 |
+| [DeviceSumamryRecord](./doc/records/DeviceSumamry.md) | 设备状态记录 |
+| [EnergyIntervalRecord](./doc/records/EnergyInterval.md) | 能耗定时记录 |
+| [GpsPositionHistoryRecord](./doc/records/GpsPositionHistory.md) | GPS轨迹记录 |
+| [LogTrendRecord](./doc/records/LogTrend.md) | 日志记录 |
+| [NumericHistoryRecord](./doc/records/NumericHistory.md) | 模拟量记录 |
+| [RunCountHistoryRecord](./doc/records/RunCountHistory.md) | 运行状态统计记录 |
+| [StationSummaryRecord](./doc/records/StationSummary.md) | 站点状态记录 |
