@@ -2,10 +2,11 @@ package com.guardian.historyRecord;
 
 import com.guardian.historyRecord.enums.BHistoryTagEnum;
 import com.guardian.historyRecord.enums.BLogTypeEnum;
+import com.guardian.json.JSONObj;
+import com.guardian.json.JSONSupport;
 
 import javax.baja.history.BTrendRecord;
 import javax.baja.nre.annotations.NiagaraProperty;
-import javax.baja.nre.annotations.NiagaraSlots;
 import javax.baja.nre.annotations.NiagaraType;
 import javax.baja.sys.*;
 import java.io.DataInput;
@@ -13,26 +14,47 @@ import java.io.DataOutput;
 import java.io.IOException;
 
 /**
- * Created by Chris on 2016-12-12.
+ * device summary define for history
+ * @author Chris Lee
  */
-
 @NiagaraType
-@NiagaraSlots(
-    properties = {
-            @NiagaraProperty(name = "typeTag", type = "BHistoryTagEnum", defaultValue = "BHistoryTagEnum.DEFAULT"),
-            @NiagaraProperty(name = "deviceLogTag", type = "BLogTypeEnum", defaultValue = "BLogTypeEnum.modify"),
-            @NiagaraProperty(name = "startTime", type = "BAbsTime", defaultValue = "BAbsTime.DEFAULT"),
-            @NiagaraProperty(name = "endTime", type = "BAbsTime", defaultValue = "BAbsTime.DEFAULT"),
-            @NiagaraProperty(name = "holdTime", type = "BRelTime", defaultValue = "BRelTime.DEFAULT"),
-            @NiagaraProperty(name = "note", type = "String", defaultValue = "-"),
-    }
+@NiagaraProperty(
+        name = "typeTag",
+        type = "BHistoryTagEnum",
+        defaultValue = "BHistoryTagEnum.DEFAULT"
 )
-public class BDeviceSummaryRecord
-    extends BTrendRecord
+@NiagaraProperty(
+        name = "deviceLogTag",
+        type = "BLogTypeEnum",
+        defaultValue = "BLogTypeEnum.modify"
+)
+@NiagaraProperty(
+        name = "startTime",
+        type = "BAbsTime",
+        defaultValue = "BAbsTime.DEFAULT"
+)
+@NiagaraProperty(
+        name = "endTime",
+        type = "BAbsTime",
+        defaultValue = "BAbsTime.DEFAULT"
+)
+@NiagaraProperty(
+        name = "holdTime",
+        type = "BRelTime",
+        defaultValue = "BRelTime.DEFAULT"
+)
+@NiagaraProperty(
+        name = "note",
+        type = "String",
+        defaultValue = "-"
+)
+public final class BDeviceSummaryRecord
+        extends BTrendRecord
+        implements JSONSupport
 {
 /*+ ------------ BEGIN BAJA AUTO GENERATED CODE ------------ +*/
-/*@ $com.guardian.historyRecord.BDeviceSummaryRecord(2519917070)1.0$ @*/
-/* Generated Fri May 19 07:54:56 CST 2017 by Slot-o-Matic (c) Tridium, Inc. 2012 */
+/*@ $com.guardian.historyRecord.BDeviceSummaryRecord(1177240103)1.0$ @*/
+/* Generated Thu Nov 09 09:51:36 CST 2017 by Slot-o-Matic (c) Tridium, Inc. 2012 */
 
 ////////////////////////////////////////////////////////////////
 // Property "typeTag"
@@ -256,5 +278,36 @@ public class BDeviceSummaryRecord
         this.setNote(note);
         return this;
     }
+
+    /**
+     *
+     * @param tag
+     * @return
+     */
+    public boolean fitTag(BHistoryTagEnum tag) {
+        return this.getTypeTag().equals(tag);
+    }
+
+    @Override
+    public String toJSONString() {
+        return this.getJSONObj().toString();
+    }
+
+    @Override
+    public JSONObj getJSONObj() {
+        JSONObj jsonObj = new JSONObj();
+        return this.appendJSONObj(jsonObj);
+    }
+
+    @Override
+    public JSONObj appendJSONObj(JSONObj jsonObj) {
+        jsonObj.put("start", this.getStartTime().getMillis());
+        jsonObj.put("end", this.getEndTime().getMillis());
+        jsonObj.put("held", this.getHoldTime().getMillis());
+        jsonObj.put("tag", this.getDeviceLogTag().getDisplayText());
+        jsonObj.put("note", this.getNote());
+        return jsonObj;
+    }
+
 
 }

@@ -4,11 +4,14 @@ import javax.baja.nre.annotations.NiagaraEnum;
 import javax.baja.nre.annotations.NiagaraType;
 import javax.baja.nre.annotations.Range;
 import javax.baja.sys.BFrozenEnum;
+import javax.baja.sys.Context;
 import javax.baja.sys.Sys;
 import javax.baja.sys.Type;
 
 /**
- * Created by Guardian on 2017-2-4.
+ * BLatTagEnum
+ * latitude tag : equator(0), north, south
+ * @author Chris Lee
  */
 @NiagaraType
 @NiagaraEnum(
@@ -20,7 +23,7 @@ import javax.baja.sys.Type;
         defaultValue = "equator"
 )
 public final class BLatTagEnum
-    extends BFrozenEnum
+        extends BFrozenEnum
 {
 /*+ ------------ BEGIN BAJA AUTO GENERATED CODE ------------ +*/
 /*@ $com.guardian.base.lbs.BLatTagEnum(508994352)1.0$ @*/
@@ -70,4 +73,55 @@ public final class BLatTagEnum
 
 /*+ ------------ END BAJA AUTO GENERATED CODE -------------- +*/
 
+    /**
+     * a short tag for read
+     * @param direct
+     * @return "S""N""Zero"
+     */
+    public static String getDirectTag(BLatTagEnum direct) {
+        if(direct.equals(BLatTagEnum.south)) {
+            return "S";
+        } else if(direct.equals(BLatTagEnum.north)) {
+            return "N";
+        } else {
+            return "Zero";
+        }
+    }
+
+    /**
+     * get a user readable tag using lexicon in module with tag start with "display.enum.{TYPE}.{TAG}"
+     * @param enumValue the value
+     * @return a user readable text string
+     */
+    public static String getDisplayText(BLatTagEnum enumValue) {
+        return enumValue.getLexicon().get("display.enum.latTag." + enumValue.getTag(), enumValue.getTag());
+    }
+
+    /**
+     * call the static function with this value
+     * @return getDisplayText(this)
+     */
+    public String getDisplayText() {
+        return BLatTagEnum.getDisplayText(this);
+    }
+
+    /**
+     * Get a user readable version of the tag identifier.
+     * @param context
+     * @return this.getDisplayText()
+     */
+    @Override
+    public String getDisplayTag(Context context) {
+        return this.getDisplayText();
+    }
+
+    /**
+     * override toString function
+     * @param context
+     * @return {DISPLAY_TAG}[{TAG}]:{ORDINAL}
+     */
+    @Override
+    public String toString(Context context) {
+        return this.getDisplayTag(context) + "[" + this.getTag() + "]:" + this.getOrdinal();
+    }
 }

@@ -3,9 +3,11 @@
  */
 package com.guardian.historyRecord;
 
+import com.guardian.json.JSONObj;
+import com.guardian.json.JSONSupport;
+
 import javax.baja.history.BHistoryRecord;
 import javax.baja.nre.annotations.NiagaraProperty;
-import javax.baja.nre.annotations.NiagaraSlots;
 import javax.baja.nre.annotations.NiagaraType;
 import javax.baja.sys.*;
 import java.io.DataInput;
@@ -14,23 +16,27 @@ import java.io.IOException;
 
 /**
  * @author Chris Lee
- * 
  * "timeStamp":STRING,  --yyyy-MM-dd hh:mm:ss
  * "logText":STRING
  */
 @NiagaraType
-@NiagaraSlots(
-        properties = {
-                @NiagaraProperty(name = "time", type = "BAbsTime", defaultValue = "BAbsTime.now()"),
-                @NiagaraProperty(name = "logText", type = "String", defaultValue = "-"),
-        }
+@NiagaraProperty(
+        name = "time",
+        type = "BAbsTime",
+        defaultValue = "BAbsTime.now()"
 )
-public class BLogTrendRecord
-    extends BHistoryRecord
+@NiagaraProperty(
+        name = "logText",
+        type = "String",
+        defaultValue = "-"
+)
+public final class BLogTrendRecord
+        extends BHistoryRecord
+        implements JSONSupport
 {
 /*+ ------------ BEGIN BAJA AUTO GENERATED CODE ------------ +*/
-/*@ $com.guardian.historyRecord.BLogTrendRecord(1168575237)1.0$ @*/
-/* Generated Thu May 18 17:03:24 CST 2017 by Slot-o-Matic (c) Tridium, Inc. 2012 */
+/*@ $com.guardian.historyRecord.BLogTrendRecord(2018406534)1.0$ @*/
+/* Generated Thu Nov 09 09:51:37 CST 2017 by Slot-o-Matic (c) Tridium, Inc. 2012 */
 
 ////////////////////////////////////////////////////////////////
 // Property "time"
@@ -92,6 +98,7 @@ public class BLogTrendRecord
      * Tests whether this record type has a fixed size. BAlarmTrendRecord have a variable size.
      * @see BHistoryRecord#isFixedSize()
      */
+    @Override
     public boolean isFixedSize() { return false; }
 
 
@@ -99,6 +106,7 @@ public class BLogTrendRecord
      * Read the type specific fields from the specified input.
      * @see javax.baja.history.BTrendRecord#doReadTrend(DataInput)
      */
+    @Override
     public void doRead(DataInput in) throws IOException {
         this.setTime(BAbsTime.make(in.readLong()));
         this.setLogText(in.readUTF());
@@ -108,6 +116,7 @@ public class BLogTrendRecord
      * Write the type specific fields to the specified output.
      * @see javax.baja.history.BTrendRecord#doWriteTrend(DataOutput)
      */
+    @Override
     public void doWrite(DataOutput out) throws IOException {
         out.writeLong(this.getTime().getMillis());
         out.writeUTF(this.getLogText());
@@ -135,6 +144,7 @@ public class BLogTrendRecord
      * make a readable string of this record
      * @see BHistoryRecord#toString(Context)
      */
+    @Override
     public String toString(Context ctx) {
         StringBuffer s = new StringBuffer(64);
         s.append(super.toString(ctx));
@@ -143,6 +153,24 @@ public class BLogTrendRecord
         s.append(" logText=");
         s.append(this.getLogText());
         return s.toString();
+    }
+
+    @Override
+    public String toJSONString() {
+        return this.getJSONObj().toString();
+    }
+
+    @Override
+    public JSONObj getJSONObj() {
+        JSONObj jsonObj = new JSONObj();
+        return this.appendJSONObj(jsonObj);
+    }
+
+    @Override
+    public JSONObj appendJSONObj(JSONObj jsonObj) {
+        jsonObj.put(this.getLexicon().get("api.json.log.timeStamp.mills"), this.getTime().getMillis());
+        jsonObj.put(this.getLexicon().get("api.json.log.text"), this.getLogText());
+        return jsonObj;
     }
 
 }

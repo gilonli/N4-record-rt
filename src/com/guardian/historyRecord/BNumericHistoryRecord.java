@@ -1,37 +1,42 @@
 package com.guardian.historyRecord;
 
 import com.guardian.historyRecord.enums.BHistoryTagEnum;
+import com.guardian.json.JSONObj;
+import com.guardian.json.JSONSupport;
 
 import javax.baja.history.BTrendRecord;
 import javax.baja.nre.annotations.NiagaraProperty;
-import javax.baja.nre.annotations.NiagaraSlots;
 import javax.baja.nre.annotations.NiagaraType;
 import javax.baja.status.BStatus;
 import javax.baja.sys.*;
 import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
+import java.text.DecimalFormat;
 
 /**
- * Created by Chris on 2016-12-12.
+ * numeric point record define for history
+ * @author Chris Lee
  */
-
 @NiagaraType
-@NiagaraSlots(
-    properties = {
-            @NiagaraProperty(name = "typeTag", type = "BHistoryTagEnum", defaultValue = "BHistoryTagEnum.DEFAULT"),
-            @NiagaraProperty(name = "value", type = "double", defaultValue = "0.0d"),
-    }
+@NiagaraProperty(
+        name = "typeTag",
+        type = "BHistoryTagEnum",
+        defaultValue = "BHistoryTagEnum.DEFAULT"
 )
-public class BNumericHistoryRecord
-    extends BTrendRecord
+@NiagaraProperty(
+        name = "value",
+        type = "double",
+        defaultValue = "0.0d"
+)
+public final class BNumericHistoryRecord
+        extends BTrendRecord
+        implements JSONSupport
 {
 
-
-
 /*+ ------------ BEGIN BAJA AUTO GENERATED CODE ------------ +*/
-/*@ $com.guardian.historyRecord.BNumericHistoryRecord(968057440)1.0$ @*/
-/* Generated Thu May 18 17:10:10 CST 2017 by Slot-o-Matic (c) Tridium, Inc. 2012 */
+/*@ $com.guardian.historyRecord.BNumericHistoryRecord(60634108)1.0$ @*/
+/* Generated Thu Nov 09 09:51:37 CST 2017 by Slot-o-Matic (c) Tridium, Inc. 2012 */
 
 ////////////////////////////////////////////////////////////////
 // Property "typeTag"
@@ -146,6 +151,34 @@ public class BNumericHistoryRecord
         this.setValue(value);
         this.setStatus(status);
         return this;
+    }
+
+    /**
+     *
+     * @param tag
+     * @return
+     */
+    public boolean fitTag(BHistoryTagEnum tag) {
+        return this.getTypeTag().equals(tag);
+    }
+
+    @Override
+    public String toJSONString() {
+        return this.getJSONObj().toString();
+    }
+
+    @Override
+    public JSONObj getJSONObj() {
+        JSONObj jsonObj = new JSONObj();
+        return this.appendJSONObj(jsonObj);
+    }
+
+    @Override
+    public JSONObj appendJSONObj(JSONObj jsonObj) {
+        jsonObj.put(this.getLexicon().get("api.json.numericHistory.timestamp.mills"), this.getTimestamp().getMillis());
+        jsonObj.put(this.getLexicon().get("api.json.numericHistory.value"), new DecimalFormat(",##0.00").format(this.getValue()));
+        jsonObj.put(this.getLexicon().get("api.json.numericHistory.statue"), this.getStatus().getBits());
+        return jsonObj;
     }
 
 }

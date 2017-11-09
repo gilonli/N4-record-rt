@@ -1,10 +1,11 @@
 package com.guardian.historyRecord;
 
 import com.guardian.historyRecord.enums.BHistoryTagEnum;
+import com.guardian.json.JSONObj;
+import com.guardian.json.JSONSupport;
 
 import javax.baja.history.BTrendRecord;
 import javax.baja.nre.annotations.NiagaraProperty;
-import javax.baja.nre.annotations.NiagaraSlots;
 import javax.baja.nre.annotations.NiagaraType;
 import javax.baja.status.BStatus;
 import javax.baja.sys.*;
@@ -13,27 +14,47 @@ import java.io.DataOutput;
 import java.io.IOException;
 
 /**
- * Created by Chris on 2016-12-12.
+ * run count record define for device
+ * @author Chris Lee
  */
-
 @NiagaraType
-@NiagaraSlots(
-    properties = {
-            @NiagaraProperty(name = "typeTag", type = "BHistoryTagEnum", defaultValue = "BHistoryTagEnum.DEFAULT"),
-            @NiagaraProperty(name = "value", type = "boolean", defaultValue = "false"),
-            @NiagaraProperty(name = "startCount", type = "int", defaultValue = "0"),
-            @NiagaraProperty(name = "startFrom", type = "BAbsTime", defaultValue = "BAbsTime.DEFAULT"),
-            @NiagaraProperty(name = "EndAt", type = "BAbsTime", defaultValue = "BAbsTime.DEFAULT"),
-            @NiagaraProperty(name = "keptTime", type = "BRelTime", defaultValue = "BRelTime.DEFAULT"),
-    }
+@NiagaraProperty(
+        name = "typeTag",
+        type = "BHistoryTagEnum",
+        defaultValue = "BHistoryTagEnum.DEFAULT"
 )
-public class BRunCountHistoryRecord
-    extends BTrendRecord
+@NiagaraProperty(
+        name = "value",
+        type = "boolean",
+        defaultValue = "false"
+)
+@NiagaraProperty(
+        name = "startCount",
+        type = "int",
+        defaultValue = "0"
+)
+@NiagaraProperty(
+        name = "startFrom",
+        type = "BAbsTime",
+        defaultValue = "BAbsTime.DEFAULT"
+)
+@NiagaraProperty(
+        name = "EndAt",
+        type = "BAbsTime",
+        defaultValue = "BAbsTime.DEFAULT"
+)
+@NiagaraProperty(
+        name = "keptTime",
+        type = "BRelTime",
+        defaultValue = "BRelTime.DEFAULT"
+)
+public final class BRunCountHistoryRecord
+        extends BTrendRecord
+        implements JSONSupport
 {
-
 /*+ ------------ BEGIN BAJA AUTO GENERATED CODE ------------ +*/
-/*@ $com.guardian.historyRecord.BRunCountHistoryRecord(1473094093)1.0$ @*/
-/* Generated Thu May 18 17:16:53 CST 2017 by Slot-o-Matic (c) Tridium, Inc. 2012 */
+/*@ $com.guardian.historyRecord.BRunCountHistoryRecord(1494458415)1.0$ @*/
+/* Generated Thu Nov 09 09:51:37 CST 2017 by Slot-o-Matic (c) Tridium, Inc. 2012 */
 
 ////////////////////////////////////////////////////////////////
 // Property "typeTag"
@@ -256,6 +277,50 @@ public class BRunCountHistoryRecord
         this.setKeptTime(this.getStartFrom().delta(BAbsTime.now()));
         this.setStatus(status);
         return this;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String getValueString() {
+        if(this.getValue()) {
+            return this.getLexicon().get("api.json.value.runCount.value.true");
+        } else {
+            return this.getLexicon().get("api.json.value.runCount.value.false");
+        }
+    }
+
+    /**
+     *
+     * @param tag
+     * @return
+     */
+    public boolean fitTag(BHistoryTagEnum tag) {
+        return this.getTypeTag().equals(tag);
+    }
+
+    @Override
+    public String toJSONString() {
+        return this.getJSONObj().toString();
+    }
+
+    @Override
+    public JSONObj getJSONObj() {
+        JSONObj jsonObj = new JSONObj();
+        return this.appendJSONObj(jsonObj);
+    }
+
+    @Override
+    public JSONObj appendJSONObj(JSONObj jsonObj) {
+        jsonObj.put(this.getLexicon().get("api.json.runCount.timestamp"), this.getTimestamp());
+        jsonObj.put(this.getLexicon().get("api.json.runCount.tag"), this.getTypeTag());
+        jsonObj.put(this.getLexicon().get("api.json.runCount.value"), this.getValueString());
+        jsonObj.put(this.getLexicon().get("api.json.runCount.startCount"), this.getStartCount());
+        jsonObj.put(this.getLexicon().get("api.json.runCount.startFrom.mills"), this.getStartFrom().getMillis());
+        jsonObj.put(this.getLexicon().get("api.json.runCount.endAt.mills"), this.getEndAt().getMillis());
+        jsonObj.put(this.getLexicon().get("api.json.runCount.keptTime.mills"), this.getKeptTime().getMillis());
+        return jsonObj;
     }
 
 }

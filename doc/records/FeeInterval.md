@@ -8,25 +8,29 @@ extends **BTrendRecord**
 |:-------:|:------:|:-------:|:------------|
 | typeTag | [BHistoryTagEnum](../enums/HistoryTagEnum.md) | [BHistoryTagEnum](../enums/HistoryTagEnum.md).DEFAULT | 记录数据的统计时间类型 |
 | EndAt | BAbsTime | BAbsTime.DEFAULT | 记录截止时间 |
-| meterRead | double | 0.0d | 表读数 |
 | cost | double | 0.0d | 记录周期内消耗 |
+| fee | double | 0.0d | 记录周期内平均价格 |
+| bill | double | 0.0d | 记录周期内的费用 |
 
 ## to JSON String
 | key | 赋值 | 说明 | 取值 |
 |:-------|:------|:-------|:---------|
-| endAt | `this.getEndAt().getMillis()` | 记录截止时间(毫秒) | long |
-| meterRead | `this.getMeterRead()` | 表读数 | double |
+| endAt | `this.getEndAt().getMillis()` | 记录时间戳(毫秒) | long |
 | cost | `this.getCost()` | 记录周期内消耗 | double |
+| fee | `this.getFee()` | 记录周期内平均价格 | double |
+| bill | `this.getBill()` | 记录周期内的费用 | double |
 
 ## lexicon
 | key | value |
 |:-------|:------|
-| api.json.energy.endAt.mills | endAt |
-| api.json.energy.meterRead | meterRead |
-| api.json.energy.cost | cost |
+| api.json.bill.endAt.mills | endAt |
+| api.json.bill.cost | cost |
+| api.json.bill.fee | fee |
+| api.json.bill.bill | bill |
 
 `
-api.json.energy.endAt.mills=endAt
-api.json.energy.meterRead=meterRead
-api.json.energy.cost=cost
+api.json.bill.endAt.mills=endAt
+api.json.bill.cost=cost
+api.json.bill.fee=fee
+api.json.bill.bill=bill
 `

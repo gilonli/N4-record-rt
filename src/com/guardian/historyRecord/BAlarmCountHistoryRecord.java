@@ -1,10 +1,11 @@
 package com.guardian.historyRecord;
 
 import com.guardian.historyRecord.enums.BHistoryTagEnum;
+import com.guardian.json.JSONObj;
+import com.guardian.json.JSONSupport;
 
 import javax.baja.history.BTrendRecord;
 import javax.baja.nre.annotations.NiagaraProperty;
-import javax.baja.nre.annotations.NiagaraSlots;
 import javax.baja.nre.annotations.NiagaraType;
 import javax.baja.status.BStatus;
 import javax.baja.sys.*;
@@ -13,27 +14,47 @@ import java.io.DataOutput;
 import java.io.IOException;
 
 /**
- * Created by Chris on 2016-12-12.
+ * alarm count record define
+ * @author Chris Lee
  */
-
 @NiagaraType
-@NiagaraSlots(
-    properties = {
-            @NiagaraProperty(name = "typeTag", type = "BHistoryTagEnum", defaultValue = "BHistoryTagEnum.DEFAULT"),
-            @NiagaraProperty(name = "value", type = "boolean", defaultValue = "false"),
-            @NiagaraProperty(name = "alarmCount", type = "int", defaultValue = "0"),
-            @NiagaraProperty(name = "startFrom", type = "BAbsTime", defaultValue = "BAbsTime.DEFAULT"),
-            @NiagaraProperty(name = "EndAt", type = "BAbsTime", defaultValue = "BAbsTime.DEFAULT"),
-            @NiagaraProperty(name = "keptTime", type = "BRelTime", defaultValue = "BRelTime.DEFAULT"),
-    }
+@NiagaraProperty(
+        name = "typeTag",
+        type = "BHistoryTagEnum",
+        defaultValue = "BHistoryTagEnum.DEFAULT"
 )
-public class BAlarmCountHistoryRecord
-    extends BTrendRecord
+@NiagaraProperty(
+        name = "value",
+        type = "boolean",
+        defaultValue = "false"
+)
+@NiagaraProperty(
+        name = "count",
+        type = "int",
+        defaultValue = "0"
+)
+@NiagaraProperty(
+        name = "startFrom",
+        type = "BAbsTime",
+        defaultValue = "BAbsTime.DEFAULT"
+)
+@NiagaraProperty(
+        name = "EndAt",
+        type = "BAbsTime",
+        defaultValue = "BAbsTime.DEFAULT"
+)
+@NiagaraProperty(
+        name = "keptTime",
+        type = "BRelTime",
+        defaultValue = "BRelTime.DEFAULT"
+)
+public final class BAlarmCountHistoryRecord
+        extends BTrendRecord
+        implements JSONSupport
 {
-
 /*+ ------------ BEGIN BAJA AUTO GENERATED CODE ------------ +*/
-/*@ $com.guardian.historyRecord.BAlarmCountHistoryRecord(1242351642)1.0$ @*/
-/* Generated Thu May 18 17:16:52 CST 2017 by Slot-o-Matic (c) Tridium, Inc. 2012 */
+/*@ $com.guardian.historyRecord.BAlarmCountHistoryRecord(588473534)1.0$ @*/
+/* Generated Thu Nov 09 09:51:36 CST 2017 by Slot-o-Matic (c) Tridium, Inc. 2012 */
 
 ////////////////////////////////////////////////////////////////
 // Property "typeTag"
@@ -82,27 +103,27 @@ public class BAlarmCountHistoryRecord
   public void setValue(boolean v) { setBoolean(value, v, null); }
 
 ////////////////////////////////////////////////////////////////
-// Property "alarmCount"
+// Property "count"
 ////////////////////////////////////////////////////////////////
   
   /**
-   * Slot for the {@code alarmCount} property.
-   * @see #getAlarmCount
-   * @see #setAlarmCount
+   * Slot for the {@code count} property.
+   * @see #getCount
+   * @see #setCount
    */
-  public static final Property alarmCount = newProperty(0, 0, null);
+  public static final Property count = newProperty(0, 0, null);
   
   /**
-   * Get the {@code alarmCount} property.
-   * @see #alarmCount
+   * Get the {@code count} property.
+   * @see #count
    */
-  public int getAlarmCount() { return getInt(alarmCount); }
+  public int getCount() { return getInt(count); }
   
   /**
-   * Set the {@code alarmCount} property.
-   * @see #alarmCount
+   * Set the {@code count} property.
+   * @see #count
    */
-  public void setAlarmCount(int v) { setInt(alarmCount, v, null); }
+  public void setCount(int v) { setInt(count, v, null); }
 
 ////////////////////////////////////////////////////////////////
 // Property "startFrom"
@@ -201,7 +222,7 @@ public class BAlarmCountHistoryRecord
     protected void doReadTrend(DataInput dataInput) throws IOException {
         this.setTypeTag(BHistoryTagEnum.make(dataInput.readInt()));
         this.setValue(dataInput.readBoolean());
-        this.setAlarmCount(dataInput.readInt());
+        this.setCount(dataInput.readInt());
         this.setStartFrom(BAbsTime.make(dataInput.readLong()));
         this.setEndAt(BAbsTime.make(dataInput.readLong()));
         this.setKeptTime(BRelTime.make(dataInput.readLong()));
@@ -216,7 +237,7 @@ public class BAlarmCountHistoryRecord
     protected void doWriteTrend(DataOutput dataOutput) throws IOException {
         dataOutput.writeInt(this.getTypeTag().getOrdinal());
         dataOutput.writeBoolean(this.getValue());
-        dataOutput.writeInt(this.getAlarmCount());
+        dataOutput.writeInt(this.getCount());
         dataOutput.writeLong(this.getStartFrom().getMillis());
         dataOutput.writeLong(this.getEndAt().getMillis());
         dataOutput.writeLong(this.getKeptTime().getMillis());
@@ -250,7 +271,7 @@ public class BAlarmCountHistoryRecord
         this.setTimestamp(timestamp);
         this.setTypeTag(tag);
         this.setValue(value);
-        this.setAlarmCount(count);
+        this.setCount(count);
         this.setStartFrom(startFrom);
         this.setEndAt(BAbsTime.now());
         this.setKeptTime(this.getStartFrom().delta(BAbsTime.now()));
@@ -258,4 +279,47 @@ public class BAlarmCountHistoryRecord
         return this;
     }
 
+    /**
+     *
+     * @return
+     */
+    public String getValueString() {
+        if(this.getValue()) {
+            return this.getLexicon().get("api.json.value.alarmCount.value.true");
+        } else {
+            return this.getLexicon().get("api.json.value.alarmCount.value.false");
+        }
+    }
+
+    /**
+     *
+     * @param tag
+     * @return
+     */
+    public boolean fitTag(BHistoryTagEnum tag) {
+        return this.getTypeTag().equals(tag);
+    }
+
+    @Override
+    public String toJSONString() {
+        return this.getJSONObj().toString();
+    }
+
+    @Override
+    public JSONObj getJSONObj() {
+        JSONObj jsonObj = new JSONObj();
+        return this.appendJSONObj(jsonObj);
+    }
+
+    @Override
+    public JSONObj appendJSONObj(JSONObj jsonObj) {
+        jsonObj.put(this.getLexicon().get("api.json.alarmCount.timestamp.mills"), this.getTimestamp().getMillis());
+        jsonObj.put(this.getLexicon().get("api.json.alarmCount.tag"), this.getTypeTag());
+        jsonObj.put(this.getLexicon().get("api.json.alarmCount.value"), this.getValueString());
+        jsonObj.put(this.getLexicon().get("api.json.alarmCount.count"), this.getCount());
+        jsonObj.put(this.getLexicon().get("api.json.alarmCount.startFrom.mills"), this.getStartFrom().getMillis());
+        jsonObj.put(this.getLexicon().get("api.json.alarmCount.endAt.mills"), this.getEndAt().getMillis());
+        jsonObj.put(this.getLexicon().get("api.json.alarmCount.keptTime.mills"), this.getKeptTime().getMillis());
+        return jsonObj;
+    }
 }

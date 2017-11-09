@@ -1,10 +1,11 @@
 package com.guardian.historyRecord;
 
 import com.guardian.historyRecord.enums.BHistoryTagEnum;
+import com.guardian.json.JSONObj;
+import com.guardian.json.JSONSupport;
 
 import javax.baja.history.BTrendRecord;
 import javax.baja.nre.annotations.NiagaraProperty;
-import javax.baja.nre.annotations.NiagaraSlots;
 import javax.baja.nre.annotations.NiagaraType;
 import javax.baja.sys.*;
 import java.io.DataInput;
@@ -12,29 +13,47 @@ import java.io.DataOutput;
 import java.io.IOException;
 
 /**
- * Created by Chris on 2016-12-12.
+ * station summary record define for history
+ * @author Chris Lee
  */
-
 @NiagaraType
-@NiagaraSlots(
-    properties = {
-            @NiagaraProperty(name = "typeTag", type = "BHistoryTagEnum", defaultValue = "BHistoryTagEnum.DEFAULT"),
-            @NiagaraProperty(name = "deviceCount", type = "long", defaultValue = "0l"),
-            @NiagaraProperty(name = "deviceOnlineCount", type = "long", defaultValue = "0l"),
-            @NiagaraProperty(name = "deviceRunCount", type = "long", defaultValue = "0l"),
-            @NiagaraProperty(name = "deviceRunMinutesInHour", type = "long", defaultValue = "0l"),
-            @NiagaraProperty(name = "deviceAlarmingCount", type = "long", defaultValue = "0l"),
-    }
+@NiagaraProperty(
+        name = "typeTag",
+        type = "BHistoryTagEnum",
+        defaultValue = "BHistoryTagEnum.DEFAULT"
 )
-public class BStationSummaryRecord
-    extends BTrendRecord
+@NiagaraProperty(
+        name = "deviceCount",
+        type = "long",
+        defaultValue = "0l"
+)
+@NiagaraProperty(
+        name = "deviceOnlineCount",
+        type = "long",
+        defaultValue = "0l"
+)
+@NiagaraProperty(
+        name = "deviceRunCount",
+        type = "long",
+        defaultValue = "0l"
+)
+@NiagaraProperty(
+        name = "deviceRunMinutesInHour",
+        type = "long",
+        defaultValue = "0l"
+)
+@NiagaraProperty(
+        name = "deviceAlarmingCount",
+        type = "long",
+        defaultValue = "0l"
+)
+public final class BStationSummaryRecord
+        extends BTrendRecord
+        implements JSONSupport
 {
-
-
-
 /*+ ------------ BEGIN BAJA AUTO GENERATED CODE ------------ +*/
-/*@ $com.guardian.historyRecord.BStationSummaryRecord(3471918459)1.0$ @*/
-/* Generated Thu May 18 17:10:26 CST 2017 by Slot-o-Matic (c) Tridium, Inc. 2012 */
+/*@ $com.guardian.historyRecord.BStationSummaryRecord(3422712501)1.0$ @*/
+/* Generated Thu Nov 09 09:51:37 CST 2017 by Slot-o-Matic (c) Tridium, Inc. 2012 */
 
 ////////////////////////////////////////////////////////////////
 // Property "typeTag"
@@ -259,6 +278,37 @@ public class BStationSummaryRecord
         this.setDeviceRunMinutesInHour(deviceRunMinutes);
         this.setDeviceAlarmingCount(deviceAlarmCount);
         return this;
+    }
+
+    /**
+     *
+     * @param tag
+     * @return
+     */
+    public boolean fitTag(BHistoryTagEnum tag) {
+        return this.getTypeTag().equals(tag);
+    }
+
+    @Override
+    public String toJSONString() {
+        return this.getJSONObj().toString();
+    }
+
+    @Override
+    public JSONObj getJSONObj() {
+        JSONObj jsonObj = new JSONObj();
+        return this.appendJSONObj(jsonObj);
+    }
+
+    @Override
+    public JSONObj appendJSONObj(JSONObj jsonObj) {
+        jsonObj.put(this.getLexicon().get("api.json.stationSummary.typeTag"), this.getTypeTag());
+        jsonObj.put(this.getLexicon().get("api.json.stationSummary.deviceCount"), this.getDeviceCount());
+        jsonObj.put(this.getLexicon().get("api.json.stationSummary.deviceOnlineCount"), this.getDeviceOnlineCount());
+        jsonObj.put(this.getLexicon().get("api.json.stationSummary.deviceRunCount"), this.getDeviceRunCount());
+        jsonObj.put(this.getLexicon().get("api.json.stationSummary.deviceRunMinutes"), this.getDeviceRunMinutesInHour());
+        jsonObj.put(this.getLexicon().get("api.json.stationSummary.deviceAlarmingCount"), this.getDeviceAlarmingCount());
+        return jsonObj;
     }
 
 }

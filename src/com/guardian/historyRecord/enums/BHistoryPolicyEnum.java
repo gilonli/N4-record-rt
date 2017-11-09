@@ -4,11 +4,15 @@ import javax.baja.nre.annotations.NiagaraEnum;
 import javax.baja.nre.annotations.NiagaraType;
 import javax.baja.nre.annotations.Range;
 import javax.baja.sys.BFrozenEnum;
+import javax.baja.sys.Context;
 import javax.baja.sys.Sys;
 import javax.baja.sys.Type;
 
 /**
- * Created by Guardian on 2017-4-28.
+ * BHistoryPolicyEnum
+ * the value record in numeric type, like:
+ * average, sum, max, min, input
+ * @author Chris Lee
  */
 @NiagaraType
 @NiagaraEnum(
@@ -22,7 +26,7 @@ import javax.baja.sys.Type;
         defaultValue = "input"
 )
 public final class BHistoryPolicyEnum
-    extends BFrozenEnum
+        extends BFrozenEnum
 {
 /*+ ------------ BEGIN BAJA AUTO GENERATED CODE ------------ +*/
 /*@ $com.guardian.historyRecord.enums.BHistoryPolicyEnum(1521190121)1.0$ @*/
@@ -80,4 +84,40 @@ public final class BHistoryPolicyEnum
 
 /*+ ------------ END BAJA AUTO GENERATED CODE -------------- +*/
 
+    /**
+     * get a user readable tag using lexicon in module with tag start with "display.enum.{TYPE}.{TAG}"
+     * @param enumValue the value
+     * @return a user readable text string
+     */
+    public static String getDisplayText(BHistoryPolicyEnum enumValue) {
+        return enumValue.getLexicon().get("display.enum.historyPolicy." + enumValue.getTag(), enumValue.getTag());
+    }
+
+    /**
+     * call the static function with this value
+     * @return getDisplayText(this)
+     */
+    public String getDisplayText() {
+        return BHistoryPolicyEnum.getDisplayText(this);
+    }
+
+    /**
+     * Get a user readable version of the tag identifier.
+     * @param context
+     * @return this.getDisplayText()
+     */
+    @Override
+    public String getDisplayTag(Context context) {
+        return this.getDisplayText();
+    }
+
+    /**
+     * override toString function
+     * @param context
+     * @return {DISPLAY_TAG}[{TAG}]:{ORDINAL}
+     */
+    @Override
+    public String toString(Context context) {
+        return this.getDisplayTag(context) + "[" + this.getTag() + "]:" + this.getOrdinal();
+    }
 }

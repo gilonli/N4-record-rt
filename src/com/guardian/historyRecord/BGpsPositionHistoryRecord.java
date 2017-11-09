@@ -4,10 +4,11 @@ import com.guardian.historyRecord.enums.BDirectEnum;
 import com.guardian.historyRecord.enums.BHistoryTagEnum;
 import com.guardian.historyRecord.enums.BLatTagEnum;
 import com.guardian.historyRecord.enums.BLngTagEnum;
+import com.guardian.json.JSONObj;
+import com.guardian.json.JSONSupport;
 
 import javax.baja.history.BTrendRecord;
 import javax.baja.nre.annotations.NiagaraProperty;
-import javax.baja.nre.annotations.NiagaraSlots;
 import javax.baja.nre.annotations.NiagaraType;
 import javax.baja.sys.*;
 import java.io.DataInput;
@@ -15,30 +16,71 @@ import java.io.DataOutput;
 import java.io.IOException;
 
 /**
- * Created by Guardian on 2017-4-28.
+ * gps position & statue record define for history
+ * @author Chris Lee
  */
 @NiagaraType
-@NiagaraSlots(
-        properties = {
-                @NiagaraProperty(name = "typeTag", type = "BHistoryTagEnum", defaultValue = "BHistoryTagEnum.DEFAULT"),
-                @NiagaraProperty(name = "longitude", type = "String",defaultValue = "nan"),
-                @NiagaraProperty(name = "longitudeTag", type = "BLngTagEnum",defaultValue = "BLngTagEnum.east"),
-                @NiagaraProperty(name = "latitude", type = "String",defaultValue = "nan"),
-                @NiagaraProperty(name = "latitudeTag", type = "BLatTagEnum",defaultValue = "BLatTagEnum.north"),
-                @NiagaraProperty(name = "height", type = "String",defaultValue = "nan"),
-                @NiagaraProperty(name = "speed", type = "String", defaultValue = "nan"),
-                @NiagaraProperty(name = "directAngel", type = "double", defaultValue = "0.0d"),
-                @NiagaraProperty(name = "directTag", type = "BDirectEnum", defaultValue = "BDirectEnum.still"),
-                @NiagaraProperty(name = "updateTime", type = "BAbsTime", defaultValue = "BAbsTime.DEFAULT"),
-                @NiagaraProperty(name = "satelliteCount", type = "String", defaultValue = "nan"),
-        }
+@NiagaraProperty(
+        name = "typeTag",
+        type = "BHistoryTagEnum",
+        defaultValue = "BHistoryTagEnum.DEFAULT"
 )
-public class BGpsPositionHistoryRecord
-    extends BTrendRecord
+@NiagaraProperty(
+        name = "longitude",
+        type = "String",defaultValue = "nan"
+)
+@NiagaraProperty(
+        name = "longitudeTag",
+        type = "BLngTagEnum",
+        defaultValue = "BLngTagEnum.east"
+)
+@NiagaraProperty(
+        name = "latitude",
+        type = "String",
+        defaultValue = "nan"
+)
+@NiagaraProperty(
+        name = "latitudeTag",
+        type = "BLatTagEnum",
+        defaultValue = "BLatTagEnum.north"
+)
+@NiagaraProperty(
+        name = "height",
+        type = "String",
+        defaultValue = "nan"
+)
+@NiagaraProperty(
+        name = "speed",
+        type = "String",
+        defaultValue = "nan"
+)
+@NiagaraProperty(
+        name = "directAngel",
+        type = "double",
+        defaultValue = "0.0d"
+)
+@NiagaraProperty(
+        name = "directTag",
+        type = "BDirectEnum",
+        defaultValue = "BDirectEnum.still"
+)
+@NiagaraProperty(
+        name = "updateTime",
+        type = "BAbsTime",
+        defaultValue = "BAbsTime.DEFAULT"
+)
+@NiagaraProperty(
+        name = "satelliteCount",
+        type = "String",
+        defaultValue = "nan"
+)
+public final class BGpsPositionHistoryRecord
+        extends BTrendRecord
+        implements JSONSupport
 {
 /*+ ------------ BEGIN BAJA AUTO GENERATED CODE ------------ +*/
-/*@ $com.guardian.historyRecord.BGpsPositionHistoryRecord(3022965982)1.0$ @*/
-/* Generated Thu May 18 17:16:52 CST 2017 by Slot-o-Matic (c) Tridium, Inc. 2012 */
+/*@ $com.guardian.historyRecord.BGpsPositionHistoryRecord(2818570412)1.0$ @*/
+/* Generated Thu Nov 09 09:51:37 CST 2017 by Slot-o-Matic (c) Tridium, Inc. 2012 */
 
 ////////////////////////////////////////////////////////////////
 // Property "typeTag"
@@ -385,6 +427,42 @@ public class BGpsPositionHistoryRecord
         this.setUpdateTime(updateTime);
         this.setSatelliteCount(satelliteCount);
         return this;
+    }
+
+    /**
+     *
+     * @param tag
+     * @return
+     */
+    public boolean fitTag(BHistoryTagEnum tag) {
+        return this.getTypeTag().equals(tag);
+    }
+
+    @Override
+    public String toJSONString() {
+        return this.getJSONObj().toString();
+    }
+
+    @Override
+    public JSONObj getJSONObj() {
+        JSONObj jsonObj = new JSONObj();
+        return this.appendJSONObj(jsonObj);
+    }
+
+    @Override
+    public JSONObj appendJSONObj(JSONObj jsonObj) {
+        jsonObj.put(this.getLexicon().get("api.json.gpsPosition.timestamp.mills"), this.getTimestamp().getMillis());
+        jsonObj.put(this.getLexicon().get("api.json.gpsPosition.longitude"), this.getLongitude());
+        jsonObj.put(this.getLexicon().get("api.json.gpsPosition.longitudeTag"), BLngTagEnum.getDirectTag(this.getLongitudeTag()));
+        jsonObj.put(this.getLexicon().get("api.json.gpsPosition.latitude"), this.getLatitude());
+        jsonObj.put(this.getLexicon().get("api.json.gpsPosition.latitudeTag"), BLatTagEnum.getDirectTag(this.getLatitudeTag()));
+        jsonObj.put(this.getLexicon().get("api.json.gpsPosition.height"), this.getHeight());
+        jsonObj.put(this.getLexicon().get("api.json.gpsPosition.speed"), this.getSpeed());
+        jsonObj.put(this.getLexicon().get("api.json.gpsPosition.directAngle"), this.getDirectAngel());
+        jsonObj.put(this.getLexicon().get("api.json.gpsPosition.directTag"), BDirectEnum.getDirectTag(this.getDirectTag()));
+        jsonObj.put(this.getLexicon().get("api.json.gpsPosition.updateTime.mills"), this.getUpdateTime().getMillis());
+        jsonObj.put(this.getLexicon().get("api.json.gpsPosition.satelliteCount"), this.getSatelliteCount());
+        return jsonObj;
     }
 
 }

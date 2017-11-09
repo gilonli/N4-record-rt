@@ -12,3 +12,10 @@ extends **BFrozenEnum**
 
 ## 默认值
 defaultValue = "primeMeridian"
+
+## lexicon
+| key | en | cn | unicode |
+|:------|:------|:------|:------|
+| display.enum.lngTag.primeMeridian | numeric | 分界线 | \u5206\u754c\u7ebf |
+| display.enum.lngTag.east | numeric | 东半球 | \u4e1c\u534a\u7403 |
+| display.enum.lngTag.west | numeric | 西半球 | \u897f\u534a\u7403 |

@@ -4,11 +4,15 @@ import javax.baja.nre.annotations.NiagaraEnum;
 import javax.baja.nre.annotations.NiagaraType;
 import javax.baja.nre.annotations.Range;
 import javax.baja.sys.BFrozenEnum;
+import javax.baja.sys.Context;
 import javax.baja.sys.Sys;
 import javax.baja.sys.Type;
 
 /**
- * Created by Chris on 2016-12-12.
+ * BHistoryTypeEnum
+ * what kind of history record is, like:
+ * summary, runState, alarmState, log, energy, meterRead, cov(ChangeOfValue)
+ * @author Chris Lee
  */
 @NiagaraType
 @NiagaraEnum(
@@ -24,7 +28,7 @@ import javax.baja.sys.Type;
         defaultValue = "summary"
 )
 public final class BHistoryTypeEnum
-    extends BFrozenEnum
+        extends BFrozenEnum
 {
 /*+ ------------ BEGIN BAJA AUTO GENERATED CODE ------------ +*/
 /*@ $com.guardian.historyRecord.enums.BHistoryTypeEnum(2966359256)1.0$ @*/
@@ -90,4 +94,40 @@ public final class BHistoryTypeEnum
 
 /*+ ------------ END BAJA AUTO GENERATED CODE -------------- +*/
 
+    /**
+     * get a user readable tag using lexicon in module with tag start with "display.enum.{TYPE}.{TAG}"
+     * @param enumValue the value
+     * @return a user readable text string
+     */
+    public static String getDisplayText(BHistoryTypeEnum enumValue) {
+        return enumValue.getLexicon().get("display.enum.historyType." + enumValue.getTag(), enumValue.getTag());
+    }
+
+    /**
+     * call the static function with this value
+     * @return getDisplayText(this)
+     */
+    public String getDisplayText() {
+        return BHistoryTypeEnum.getDisplayText(this);
+    }
+
+    /**
+     * Get a user readable version of the tag identifier.
+     * @param context
+     * @return this.getDisplayText()
+     */
+    @Override
+    public String getDisplayTag(Context context) {
+        return this.getDisplayText();
+    }
+
+    /**
+     * override toString function
+     * @param context
+     * @return {DISPLAY_TAG}[{TAG}]:{ORDINAL}
+     */
+    @Override
+    public String toString(Context context) {
+        return this.getDisplayTag(context) + "[" + this.getTag() + "]:" + this.getOrdinal();
+    }
 }

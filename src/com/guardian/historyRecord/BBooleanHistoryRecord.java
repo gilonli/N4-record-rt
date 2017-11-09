@@ -1,10 +1,11 @@
 package com.guardian.historyRecord;
 
 import com.guardian.historyRecord.enums.BHistoryTagEnum;
+import com.guardian.json.JSONObj;
+import com.guardian.json.JSONSupport;
 
 import javax.baja.history.BTrendRecord;
 import javax.baja.nre.annotations.NiagaraProperty;
-import javax.baja.nre.annotations.NiagaraSlots;
 import javax.baja.nre.annotations.NiagaraType;
 import javax.baja.status.BStatus;
 import javax.baja.sys.*;
@@ -13,24 +14,28 @@ import java.io.DataOutput;
 import java.io.IOException;
 
 /**
- * Created by Chris on 2016-12-12.
+ * boolean point record define for history
+ * @author Chris Lee
  */
-
 @NiagaraType
-@NiagaraSlots(
-    properties = {
-            @NiagaraProperty(name = "typeTag", type = "BHistoryTagEnum", defaultValue = "BHistoryTagEnum.DEFAULT"),
-            @NiagaraProperty(name = "value", type = "boolean", defaultValue = "false"),
-    }
+@NiagaraProperty(
+        name = "typeTag",
+        type = "BHistoryTagEnum",
+        defaultValue = "BHistoryTagEnum.DEFAULT"
 )
-public class BBooleanHistoryRecord
-    extends BTrendRecord
+@NiagaraProperty(
+        name = "value",
+        type = "boolean",
+        defaultValue = "false"
+)
+public final class BBooleanHistoryRecord
+        extends BTrendRecord
+        implements JSONSupport
 {
 
-
 /*+ ------------ BEGIN BAJA AUTO GENERATED CODE ------------ +*/
-/*@ $com.guardian.historyRecord.BBooleanHistoryRecord(3107741554)1.0$ @*/
-/* Generated Thu May 18 17:10:10 CST 2017 by Slot-o-Matic (c) Tridium, Inc. 2012 */
+/*@ $com.guardian.historyRecord.BBooleanHistoryRecord(1289160094)1.0$ @*/
+/* Generated Thu Nov 09 09:51:36 CST 2017 by Slot-o-Matic (c) Tridium, Inc. 2012 */
 
 ////////////////////////////////////////////////////////////////
 // Property "typeTag"
@@ -145,6 +150,34 @@ public class BBooleanHistoryRecord
         this.setValue(value);
         this.setStatus(status);
         return this;
+    }
+
+    /**
+     *
+     * @param tag
+     * @return
+     */
+    public boolean fitTag(BHistoryTagEnum tag) {
+        return this.getTypeTag().equals(tag);
+    }
+
+    @Override
+    public String toJSONString() {
+        return this.getJSONObj().toString();
+    }
+
+    @Override
+    public JSONObj getJSONObj() {
+        JSONObj jsonObj = new JSONObj();
+        return this.appendJSONObj(jsonObj);
+    }
+
+    @Override
+    public JSONObj appendJSONObj(JSONObj jsonObj) {
+        jsonObj.put(this.getLexicon().get("api.json.booleanHistory.timestamp.mills"), this.getTimestamp().getMillis());
+        jsonObj.put(this.getLexicon().get("api.json.booleanHistory.value"), this.getValue());
+        jsonObj.put(this.getLexicon().get("api.json.booleanHistory.statue"), this.getStatus().getBits());
+        return jsonObj;
     }
 
 

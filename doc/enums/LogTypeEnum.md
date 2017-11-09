@@ -23,3 +23,21 @@ extends **BFrozenEnum**
 
 ## 默认值
 defaultValue = "modify"
+
+## lexicon
+| key | en | cn | unicode |
+|:------|:------|:------|:------|
+| display.enum.logType.login | login | 登陆 | \u767b\u9646 |
+| display.enum.logType.modify | modify | 设定 | \u8bbe\u5b9a |
+| display.enum.logType.stationOnline | stationOnline | 远程站点上线 | \u8fdc\u7a0b\u7ad9\u70b9\u4e0a\u7ebf |
+| display.enum.logType.stationOffline | stationOffline | 远程站点掉线 | \u8fdc\u7a0b\u7ad9\u70b9\u6389\u7ebf |
+| display.enum.logType.stationAlarm | stationAlarm | 远程站点报警 | \u8fdc\u7a0b\u7ad9\u70b9\u62a5\u8b66 |
+| display.enum.logType.stationRecover | stationRecover | 远程站点报警解除 | \u8fdc\u7a0b\u7ad9\u70b9\u62a5\u8b66\u89e3\u9664 |
+| display.enum.logType.deviceOnline | deviceOnline | 设备上线 | \u8bbe\u5907\u4e0a\u7ebf |
+| display.enum.logType.deviceOffline | deviceOffline | 设备断线 | \u8bbe\u5907\u65ad\u7ebf |
+| display.enum.logType.deviceStart | deviceStart | 设备启动 | \u8bbe\u5907\u542f\u52a8 |
+| display.enum.logType.deviceStop | deviceStop | 设备停机 | \u8bbe\u5907\u505c\u673a |
+| display.enum.logType.deviceAlarm | deviceAlarm | 设备报警 | \u8bbe\u5907\u62a5\u8b66 |
+| display.enum.logType.deviceReset | deviceReset | 设备报警解除 | \u8bbe\u5907\u62a5\u8b66\u89e3\u9664 |
+| display.enum.logType.pointAlarm | pointAlarm |  控制点报警 | \u63a7\u5236\u70b9\u62a5\u8b66 |
+| display.enum.logType.pointReset | pointReset |  控制点报警解除 | \u63a7\u5236\u70b9\u62a5\u8b66\u89e3\u9664 |

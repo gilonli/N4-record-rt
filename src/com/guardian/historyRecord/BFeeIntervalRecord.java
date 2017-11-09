@@ -29,22 +29,27 @@ import java.io.IOException;
         defaultValue = "BAbsTime.DEFAULT"
 )
 @NiagaraProperty(
-        name = "meterRead",
-        type = "double",
-        defaultValue = "0.0d"
-)
-@NiagaraProperty(
         name = "cost",
         type = "double",
         defaultValue = "0.0d"
 )
-public final class BEnergyIntervalRecord
+@NiagaraProperty(
+        name = "fee",
+        type = "double",
+        defaultValue = "0.0d"
+)
+@NiagaraProperty(
+        name = "bill",
+        type = "double",
+        defaultValue = "0.0d"
+)
+public final class BFeeIntervalRecord
         extends BTrendRecord
         implements JSONSupport
 {
 /*+ ------------ BEGIN BAJA AUTO GENERATED CODE ------------ +*/
-/*@ $com.guardian.historyRecord.BEnergyIntervalRecord(2306904368)1.0$ @*/
-/* Generated Thu Nov 09 09:51:36 CST 2017 by Slot-o-Matic (c) Tridium, Inc. 2012 */
+/*@ $com.guardian.historyRecord.BFeeIntervalRecord(3150372409)1.0$ @*/
+/* Generated Thu Nov 09 09:51:37 CST 2017 by Slot-o-Matic (c) Tridium, Inc. 2012 */
 
 ////////////////////////////////////////////////////////////////
 // Property "typeTag"
@@ -93,29 +98,6 @@ public final class BEnergyIntervalRecord
   public void setEndAt(BAbsTime v) { set(EndAt, v, null); }
 
 ////////////////////////////////////////////////////////////////
-// Property "meterRead"
-////////////////////////////////////////////////////////////////
-  
-  /**
-   * Slot for the {@code meterRead} property.
-   * @see #getMeterRead
-   * @see #setMeterRead
-   */
-  public static final Property meterRead = newProperty(0, 0.0d, null);
-  
-  /**
-   * Get the {@code meterRead} property.
-   * @see #meterRead
-   */
-  public double getMeterRead() { return getDouble(meterRead); }
-  
-  /**
-   * Set the {@code meterRead} property.
-   * @see #meterRead
-   */
-  public void setMeterRead(double v) { setDouble(meterRead, v, null); }
-
-////////////////////////////////////////////////////////////////
 // Property "cost"
 ////////////////////////////////////////////////////////////////
   
@@ -139,19 +121,65 @@ public final class BEnergyIntervalRecord
   public void setCost(double v) { setDouble(cost, v, null); }
 
 ////////////////////////////////////////////////////////////////
+// Property "fee"
+////////////////////////////////////////////////////////////////
+  
+  /**
+   * Slot for the {@code fee} property.
+   * @see #getFee
+   * @see #setFee
+   */
+  public static final Property fee = newProperty(0, 0.0d, null);
+  
+  /**
+   * Get the {@code fee} property.
+   * @see #fee
+   */
+  public double getFee() { return getDouble(fee); }
+  
+  /**
+   * Set the {@code fee} property.
+   * @see #fee
+   */
+  public void setFee(double v) { setDouble(fee, v, null); }
+
+////////////////////////////////////////////////////////////////
+// Property "bill"
+////////////////////////////////////////////////////////////////
+  
+  /**
+   * Slot for the {@code bill} property.
+   * @see #getBill
+   * @see #setBill
+   */
+  public static final Property bill = newProperty(0, 0.0d, null);
+  
+  /**
+   * Get the {@code bill} property.
+   * @see #bill
+   */
+  public double getBill() { return getDouble(bill); }
+  
+  /**
+   * Set the {@code bill} property.
+   * @see #bill
+   */
+  public void setBill(double v) { setDouble(bill, v, null); }
+
+////////////////////////////////////////////////////////////////
 // Type
 ////////////////////////////////////////////////////////////////
   
   @Override
   public Type getType() { return TYPE; }
-  public static final Type TYPE = Sys.loadType(BEnergyIntervalRecord.class);
+  public static final Type TYPE = Sys.loadType(BFeeIntervalRecord.class);
 
 /*+ ------------ END BAJA AUTO GENERATED CODE -------------- +*/
 
     /**
      * create method
      */
-    public BEnergyIntervalRecord() {}
+    public BFeeIntervalRecord() {}
 
     /**
      * Tests whether this record type has a fixed size.  Float records
@@ -167,8 +195,9 @@ public final class BEnergyIntervalRecord
     public void doReadTrend(DataInput in) throws IOException {
         this.setTypeTag(BHistoryTagEnum.make(in.readInt()));
         this.setEndAt(BAbsTime.make(in.readLong()));
-        this.setMeterRead((double) in.readFloat());
         this.setCost((double) in.readFloat());
+        this.setFee((double) in.readFloat());
+        this.setBill((double) in.readFloat());
     }
 
     /**
@@ -178,26 +207,28 @@ public final class BEnergyIntervalRecord
     public void doWriteTrend(DataOutput out) throws IOException {
         out.writeInt(this.getTypeTag().getOrdinal());
         out.writeLong(this.getEndAt().getMillis());
-        out.writeFloat((float) this.getMeterRead());
         out.writeFloat((float) this.getCost());
+        out.writeFloat((float) this.getFee());
+        out.writeFloat((float) this.getBill());
     }
 
     /**
      * Set the values in this record.
      * @return Returns this instance with the new values set.
      */
-    public BEnergyIntervalRecord set(BAbsTime timestamp,
-                                     BHistoryTagEnum typeTag,
-                                     double   meterRead,
-                                     double   cost,
-                                     BStatus  status)
+    public BFeeIntervalRecord set(BAbsTime timestamp,
+                                  BHistoryTagEnum typeTag,
+                                  double   cost,
+                                  double   fee,
+                                  double   bill,
+                                  BStatus  status)
     {
         this.setTimestamp(timestamp);
         this.setTypeTag(typeTag);
         this.setEndAt(timestamp);
-        this.setMeterRead(meterRead);
         this.setCost(cost);
-        this.setStatus(status);
+        this.setFee(fee);
+        this.setBill(bill);
         return this;
     }
 
@@ -206,14 +237,14 @@ public final class BEnergyIntervalRecord
      */
     @Override
     public Property getValueProperty() {
-        return cost;
+        return bill;
     }
 
     /**
      * Return <code>getValue()</code>.
      */
     public double getNumeric() {
-        return getCost();
+        return getBill();
     }
 
     /**
@@ -245,9 +276,10 @@ public final class BEnergyIntervalRecord
 
     @Override
     public JSONObj appendJSONObj(JSONObj jsonObj) {
-        jsonObj.put(this.getLexicon().get("api.json.energy.endAt.mills"), this.getEndAt().getMillis());
-        jsonObj.put(this.getLexicon().get("api.json.energy.meterRead"), this.getMeterRead());
-        jsonObj.put(this.getLexicon().get("api.json.energy.cost"), this.getCost());
+        jsonObj.put(this.getLexicon().get("api.json.bill.endAt.mills"), this.getEndAt().getMillis());
+        jsonObj.put(this.getLexicon().get("api.json.bill.cost"), this.getCost());
+        jsonObj.put(this.getLexicon().get("api.json.bill.fee"), this.getFee());
+        jsonObj.put(this.getLexicon().get("api.json.bill.bill"), this.getBill());
         return jsonObj;
     }
 

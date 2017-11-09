@@ -1,96 +1,89 @@
 #
-# Lexicon for the record module.
+# Lexicon for the record module in english version
 #
 
 ###################################
 # display.enum
-# default is Chinese
 ###################################
 
 # BControlPointTypeEnum
-display.enum.controlPointType.numeric=\u6a21\u62df\u91cf
-display.enum.controlPointType.boolean=\u5e03\u5c14\u503c
-display.enum.controlPointType.string=\u5b57\u7b26\u4e32
-display.enum.controlPointType.enum=\u679a\u4e3e\u503c
+display.enum.controlPointType.numeric=numeric
+display.enum.controlPointType.boolean=boolean
+display.enum.controlPointType.string=string
+display.enum.controlPointType.enum=enum
 
 # BDirectEnum
-display.enum.direct.still=\u9759\u6b62
-display.enum.direct.east=\u4e1c
-display.enum.direct.south=\u5357
-display.enum.direct.west=\u897f
-display.enum.direct.north=\u5317
-display.enum.direct.northEast=\u4e1c\u5317
-display.enum.direct.southEast=\u4e1c\u5357
-display.enum.direct.northWest=\u897f\u5317
-display.enum.direct.southWest=\u897f\u5357
+display.enum.direct.still=still
+display.enum.direct.east=east
+display.enum.direct.south=south
+display.enum.direct.west=west
+display.enum.direct.north=north
+display.enum.direct.northEast=northEast
+display.enum.direct.southEast=southEast
+display.enum.direct.northWest=northWest
+display.enum.direct.southWest=southWest
 
 # BHistoryPolicyEnum
-# BHistoryPolicyEnum
-display.enum.historyPolicy.average=\u5e73\u5747\u503c
-display.enum.historyPolicy.sum=\u603b\u548c
-display.enum.historyPolicy.max=\u6700\u5927\u503c
-display.enum.historyPolicy.min=\u6700\u5c0f\u503c
-display.enum.historyPolicy.input=\u5b9e\u65f6\u503c
+display.enum.historyPolicy.average=average
+display.enum.historyPolicy.sum=sum
+display.enum.historyPolicy.max=max
+display.enum.historyPolicy.min=min
+display.enum.historyPolicy.input=input
 
 # BHistoryRecordMethodEnum
-display.enum.historyRecordMethod.interval=\u5468\u671f\u5b9a\u65f6
-display.enum.historyRecordMethod.changeOfValue=\u6570\u503c\u53d8\u5316
+display.enum.historyRecordMethod.interval=interval
+display.enum.historyRecordMethod.changeOfValue=changeOfValue
 
 # BHistoryTagEnum
-display.enum.historyTag.minute=\u5206\u949f
-display.enum.historyTag.hour=\u5c0f\u65f6
-display.enum.historyTag.day=\u5929
-display.enum.historyTag.week=\u5468
-display.enum.historyTag.month=\u6708
-display.enum.historyTag.year=\u5e74
-display.enum.historyTag.cov=\u6570\u503c\u53d8\u5316
+display.enum.historyTag.minute=minute
+display.enum.historyTag.hour=hour
+display.enum.historyTag.day=day
+display.enum.historyTag.week=week
+display.enum.historyTag.month=month
+display.enum.historyTag.year=year
+display.enum.historyTag.cov=changeOfValue
 
 # BHistoryTypeEnum
-display.enum.historyType.summary=\u6982\u51b5
-display.enum.historyType.runState=\u8fd0\u884c\u72b6\u6001
-display.enum.historyType.alarmState=\u62a5\u8b66\u72b6\u6001
-display.enum.historyType.log=\u65e5\u5fd7
-display.enum.historyType.energy=\u80fd\u8017
-display.enum.historyType.meterRead=\u8bfb\u53d6\u503c
-display.enum.historyType.cov=\u6570\u636e\u53d8\u5316
+display.enum.historyType.summary=summary
+display.enum.historyType.runState=runState
+display.enum.historyType.alarmState=alarmState
+display.enum.historyType.log=log
+display.enum.historyType.energy=energy
+display.enum.historyType.meterRead=valueRead
+display.enum.historyType.cov=changeOfValue
 
 # BLatTagEnum
-display.enum.latTag.equator=\u8d64\u9053
-display.enum.latTag.north=\u5317\u534a\u7403
-display.enum.latTag.south=\u5357\u534a\u7403
-
+display.enum.latTag.equator=equator
+display.enum.latTag.north=north
+display.enum.latTag.south=south
 
 # BLngTagEnum
-display.enum.lngTag.primeMeridian=\u5206\u754c\u7ebf
-display.enum.lngTag.east=\u4e1c\u534a\u7403
-display.enum.lngTag.west=\u897f\u534a\u7403
+display.enum.lngTag.primeMeridian=primeMeridian
+display.enum.lngTag.east=east
+display.enum.lngTag.west=west
 
 # BLogTypeEnum
-display.enum.logType.login=\u767b\u9646
-display.enum.logType.modify=\u8bbe\u5b9a
-display.enum.logType.stationOnline=\u8fdc\u7a0b\u7ad9\u70b9\u4e0a\u7ebf
-display.enum.logType.stationOffline=\u8fdc\u7a0b\u7ad9\u70b9\u6389\u7ebf
-display.enum.logType.stationAlarm=\u8fdc\u7a0b\u7ad9\u70b9\u62a5\u8b66
-display.enum.logType.stationRecover=\u8fdc\u7a0b\u7ad9\u70b9\u62a5\u8b66\u89e3\u9664
-display.enum.logType.deviceOnline=\u8bbe\u5907\u4e0a\u7ebf
-display.enum.logType.deviceOffline=\u8bbe\u5907\u65ad\u7ebf
-display.enum.logType.deviceStart=\u8bbe\u5907\u542f\u52a8
-display.enum.logType.deviceStop=\u8bbe\u5907\u505c\u673a
-display.enum.logType.deviceAlarm=\u8bbe\u5907\u62a5\u8b66
-display.enum.logType.deviceReset=\u8bbe\u5907\u62a5\u8b66\u89e3\u9664
-display.enum.logType.pointAlarm=\u63a7\u5236\u70b9\u62a5\u8b66
-display.enum.logType.pointReset=\u63a7\u5236\u70b9\u62a5\u8b66\u89e3\u9664
+display.enum.logType.login=login
+display.enum.logType.modify=modify
+display.enum.logType.stationOnline=stationOnline
+display.enum.logType.stationOffline=stationOffline
+display.enum.logType.stationAlarm=stationAlarm
+display.enum.logType.stationRecover=stationRecover
+display.enum.logType.deviceOnline=deviceOnline
+display.enum.logType.deviceOffline=deviceOffline
+display.enum.logType.deviceStart=deviceStart
+display.enum.logType.deviceStop=deviceStop
+display.enum.logType.deviceAlarm=deviceAlarm
+display.enum.logType.deviceReset=deviceReset
+display.enum.logType.pointAlarm=pointAlarm
+display.enum.logType.pointReset=pointReset
 
 ###################################
 # display.table.column
-# default is Chinese
 ###################################
-
-
 
 ###################################
 # api.json.value
-# default is English
 ###################################
 
 api.json.value.alarmCount.value.true=alarm
@@ -101,8 +94,8 @@ api.json.value.runCount.value.false=stop
 
 ###################################
 # api.jsonObj
-# default is English
 ###################################
+
 
 api.json.alarmCount.timestamp.mills=timeStamp
 api.json.alarmCount.tag=tag

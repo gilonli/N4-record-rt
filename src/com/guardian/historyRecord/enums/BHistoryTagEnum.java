@@ -4,11 +4,15 @@ import javax.baja.nre.annotations.NiagaraEnum;
 import javax.baja.nre.annotations.NiagaraType;
 import javax.baja.nre.annotations.Range;
 import javax.baja.sys.BFrozenEnum;
+import javax.baja.sys.Context;
 import javax.baja.sys.Sys;
 import javax.baja.sys.Type;
 
 /**
- * Created by Chris on 2016-12-12.
+ * BHistoryTagEnum
+ * the history record time tag, for querying, values like:
+ * minute, hour, day, week, month, year, cov(ChangeOfValue)
+ * @author Chris Lee
  */
 @NiagaraType
 @NiagaraEnum(
@@ -24,7 +28,7 @@ import javax.baja.sys.Type;
         defaultValue = "minute"
 )
 public final class BHistoryTagEnum
-    extends BFrozenEnum
+        extends BFrozenEnum
 {
 /*+ ------------ BEGIN BAJA AUTO GENERATED CODE ------------ +*/
 /*@ $com.guardian.historyRecord.enums.BHistoryTagEnum(745274054)1.0$ @*/
@@ -89,4 +93,41 @@ public final class BHistoryTagEnum
   public static final Type TYPE = Sys.loadType(BHistoryTagEnum.class);
 
 /*+ ------------ END BAJA AUTO GENERATED CODE -------------- +*/
+
+    /**
+     * get a user readable tag using lexicon in module with tag start with "display.enum.{TYPE}.{TAG}"
+     * @param enumValue the value
+     * @return a user readable text string
+     */
+    public static String getDisplayText(BHistoryTagEnum enumValue) {
+        return enumValue.getLexicon().get("display.enum.historyTag." + enumValue.getTag(), enumValue.getTag());
+    }
+
+    /**
+     * call the static function with this value
+     * @return getDisplayText(this)
+     */
+    public String getDisplayText() {
+        return BHistoryTagEnum.getDisplayText(this);
+    }
+
+    /**
+     * Get a user readable version of the tag identifier.
+     * @param context
+     * @return this.getDisplayText()
+     */
+    @Override
+    public String getDisplayTag(Context context) {
+        return this.getDisplayText();
+    }
+
+    /**
+     * override toString function
+     * @param context
+     * @return {DISPLAY_TAG}[{TAG}]:{ORDINAL}
+     */
+    @Override
+    public String toString(Context context) {
+        return this.getDisplayTag(context) + "[" + this.getTag() + "]:" + this.getOrdinal();
+    }
 }
