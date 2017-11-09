@@ -22,20 +22,20 @@
 
 | 名称 | 说明 | 父类 |
 |:-------------:|:----------------:|:------------|
-| [AlarmCountHistoryRecord](./doc/records/AlarmCountHistory.md) | 报警统计记录 | 
-| [AlarmLogRecord](./doc/records/AlarmLogRecord.md) | 报警日志记录 |
-| [AlarmOpenRecord](./doc/records/AlarmOpenRecord.md) | 未恢复的报警记录 |
-| [BooleanHistoryRecord](./doc/records/BooleanHistory.md) | 布尔值记录 |
-| [DeviceSumamryRecord](./doc/records/DeviceSumamry.md) | 设备状态记录 |
-| [EnergyIntervalRecord](./doc/records/EnergyInterval.md) | 能耗定时记录 |
-| [EnumHistoryRecord](./doc/records/EnumHistory.md) | 枚举值记录 |
-| [FeeIntervalRecord](./doc/records/FeeInterval.md) | 费用定时记录 |
-| [GpsPositionHistoryRecord](./doc/records/GpsPositionHistory.md) | GPS轨迹记录 |
-| [LogTrendRecord](./doc/records/LogTrend.md) | 日志记录 |
-| [NumericHistoryRecord](./doc/records/NumericHistory.md) | 模拟量记录 |
-| [RunCountHistoryRecord](./doc/records/RunCountHistory.md) | 运行状态统计记录 |
-| [StationSummaryRecord](./doc/records/StationSummary.md) | 站点状态记录 |
-| [StringHistoryRecord](./doc/records/StringHistory.md) | 字符串记录 |
+| [AlarmCountHistoryRecord](./doc/records/AlarmCountHistory.md) | 报警统计记录 | BTrendRecord |
+| [AlarmLogRecord](./doc/records/AlarmLogRecord.md) | 报警日志记录 | BHistoryRecord |
+| [AlarmOpenRecord](./doc/records/AlarmOpenRecord.md) | 未恢复的报警记录 | BHistoryRecord |
+| [BooleanHistoryRecord](./doc/records/BooleanHistory.md) | 布尔值记录 | BTrendRecord |
+| [DeviceSummaryRecord](./doc/records/DeviceSummary.md) | 设备状态记录 | BTrendRecord |
+| [EnergyIntervalRecord](./doc/records/EnergyInterval.md) | 能耗定时记录 | BTrendRecord |
+| [EnumHistoryRecord](./doc/records/EnumHistory.md) | 枚举值记录 | BEnumTrendRecord |
+| [FeeIntervalRecord](./doc/records/FeeInterval.md) | 费用定时记录 | BTrendRecord |
+| [GpsPositionHistoryRecord](./doc/records/GpsPositionHistory.md) | GPS轨迹记录 | BTrendRecord |
+| [LogTrendRecord](./doc/records/LogTrend.md) | 日志记录 | BHistoryRecord |
+| [NumericHistoryRecord](./doc/records/NumericHistory.md) | 模拟量记录 | BTrendRecord |
+| [RunCountHistoryRecord](./doc/records/RunCountHistory.md) | 运行状态统计记录 | BTrendRecord |
+| [StationSummaryRecord](./doc/records/StationSummary.md) | 站点状态记录 | BTrendRecord |
+| [StringHistoryRecord](./doc/records/StringHistory.md) | 字符串记录 | BStringTrendRecord |
 
 ***
 ## JSON
