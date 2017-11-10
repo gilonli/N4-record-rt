@@ -32,11 +32,11 @@ extends **BTrendRecord**
 | api.json.stationSummary.deviceRunMinutes | deviceRunMinutes |
 | api.json.stationSummary.deviceAlarmingCount | deviceAlarmingCount |
 
-`
+```
 api.json.stationSummary.typeTag=tag
 api.json.stationSummary.deviceCount=deviceCount
 api.json.stationSummary.deviceOnlineCount=deviceOnlineCount
 api.json.stationSummary.deviceRunCount=deviceRunCount
 api.json.stationSummary.deviceRunMinutes=deviceRunMinutes
 api.json.stationSummary.deviceAlarmingCount=deviceAlarmingCount
-`
+```

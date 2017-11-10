@@ -57,7 +57,7 @@ extends **BHistoryRecord**
 | api.json.openAlarm.note | note |
 | api.json.openAlarm.repeatTimes | repeatTimes |
 
-`
+```
 api.json.openAlarm.occureTime.mills=occureTime
 api.json.openAlarm.alarmUuid=alarmUuid
 api.json.openAlarm.sourceUuid=sourceUuid
@@ -72,4 +72,4 @@ api.json.openAlarm.alarmValue=alarmValue
 api.json.openAlarm.limitValue=limitValue
 api.json.openAlarm.note=note
 api.json.openAlarm.repeatTimes=repeatTimes
-`
+```

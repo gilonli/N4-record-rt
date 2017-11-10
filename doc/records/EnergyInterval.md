@@ -25,8 +25,8 @@ extends **BTrendRecord**
 | api.json.energy.meterRead | meterRead |
 | api.json.energy.cost | cost |
 
-`
+```
 api.json.energy.endAt.mills=endAt
 api.json.energy.meterRead=meterRead
 api.json.energy.cost=cost
-`
+```

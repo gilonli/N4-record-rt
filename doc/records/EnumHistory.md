@@ -16,8 +16,8 @@ extends **BEnumTrendRecord**
 | api.json.enumHistory.value | value |
 | api.json.enumHistory.statue | statue |
 
-`
+```
 api.json.enumHistory.timestamp.mills=timestamp
 api.json.enumHistory.value=value
 api.json.enumHistory.statue=statue
-`
+```

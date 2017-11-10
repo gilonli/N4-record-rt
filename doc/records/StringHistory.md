@@ -16,8 +16,8 @@ extends **BStringTrendRecord**
 | api.json.stringHistory.value | value |
 | api.json.stringHistory.statue | statue |
 
-`
+```
 api.json.stringHistory.timestamp.mills=timestamp
 api.json.stringHistory.value=value
 api.json.stringHistory.statue=statue
-`
+```

@@ -47,7 +47,7 @@ GPS轨迹记录
 | api.json.gpsPosition.updateTime.mills | updateTime |
 | api.json.gpsPosition.satelliteCount | satellites |
 
-`
+```
 api.json.gpsPosition.timestamp.mills=timestamp
 api.json.gpsPosition.longitude=lng
 api.json.gpsPosition.longitudeTag=lngTag
@@ -59,4 +59,4 @@ api.json.gpsPosition.directAngle=directAngle
 api.json.gpsPosition.directTag=directTag
 api.json.gpsPosition.updateTime.mills=updateTime
 api.json.gpsPosition.satelliteCount=satellites
-`
+```

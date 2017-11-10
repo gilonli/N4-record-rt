@@ -20,7 +20,7 @@ extends **BHistoryRecord**
 | api.json.log.timestamp.mills | timestamp |
 | api.json.log.text | text |
 
-`
+```
 api.json.log.timeStamp.mills=timestamp
 api.json.log.text=text
-`
+```

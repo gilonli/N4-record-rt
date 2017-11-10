@@ -30,10 +30,10 @@ extends **BTrendRecord**
 | api.json.deviceSummary.tag | tag |
 | api.json.deviceSummary.note | note |
 
-`
+```
 api.json.deviceSummary.start=start
 api.json.deviceSummary.end=end
 api.json.deviceSummary.held=held
 api.json.deviceSummary.tag=tag
 api.json.deviceSummary.note=note
-`
+```

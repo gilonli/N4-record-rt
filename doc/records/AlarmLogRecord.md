@@ -62,7 +62,7 @@ extends **BHistoryRecord**
 | api.json.alarmLog.note | note |
 | api.json.alarmLog.repeatTimes | repeatTimes |
 
-`
+```
 api.json.alarmLog.occureTime.mills=occureTime
 api.json.alarmLog.recoverTime.mills=recoverTime
 api.json.alarmLog.acknowledgeTime.mills=ackTime
@@ -79,4 +79,4 @@ api.json.alarmLog.alarmValue=alarmValue
 api.json.alarmLog.limitValue=limitValue
 api.json.alarmLog.note=note
 api.json.alarmLog.repeatTimes=repeatTimes
-`
+```

@@ -23,8 +23,8 @@ extends **BTrendRecord**
 | api.json.numericHistory.value | value |
 | api.json.numericHistory.statue | statue |
 
-`
+```
 api.json.numericHistory.timestamp.mills=timestamp
 api.json.numericHistory.value=value
 api.json.numericHistory.statue=statue
-`
+```

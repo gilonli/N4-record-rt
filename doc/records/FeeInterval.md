@@ -28,9 +28,9 @@ extends **BTrendRecord**
 | api.json.bill.fee | fee |
 | api.json.bill.bill | bill |
 
-`
+```
 api.json.bill.endAt.mills=endAt
 api.json.bill.cost=cost
 api.json.bill.fee=fee
 api.json.bill.bill=bill
-`
+```
