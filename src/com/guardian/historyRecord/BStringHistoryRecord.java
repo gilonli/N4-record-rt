@@ -9,10 +9,7 @@ import javax.baja.history.BTrendRecord;
 import javax.baja.nre.annotations.NiagaraProperty;
 import javax.baja.nre.annotations.NiagaraType;
 import javax.baja.status.BStatus;
-import javax.baja.sys.BAbsTime;
-import javax.baja.sys.Property;
-import javax.baja.sys.Sys;
-import javax.baja.sys.Type;
+import javax.baja.sys.*;
 import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
@@ -22,14 +19,43 @@ import java.io.IOException;
  * @author Chris Lee
  */
 @NiagaraType
+@NiagaraProperty(
+        name = "typeTag",
+        type = "BHistoryTagEnum",
+        defaultValue = "BHistoryTagEnum.DEFAULT"
+)
 public final class BStringHistoryRecord
         extends BStringTrendRecord
         implements JSONSupport
 {
 
+
 /*+ ------------ BEGIN BAJA AUTO GENERATED CODE ------------ +*/
-/*@ $com.guardian.historyRecord.BStringHistoryRecord(2979906276)1.0$ @*/
-/* Generated Thu Nov 09 09:51:37 CST 2017 by Slot-o-Matic (c) Tridium, Inc. 2012 */
+/*@ $com.guardian.historyRecord.BStringHistoryRecord(684669717)1.0$ @*/
+/* Generated Mon Nov 13 08:34:21 CST 2017 by Slot-o-Matic (c) Tridium, Inc. 2012 */
+
+////////////////////////////////////////////////////////////////
+// Property "typeTag"
+////////////////////////////////////////////////////////////////
+  
+  /**
+   * Slot for the {@code typeTag} property.
+   * @see #getTypeTag
+   * @see #setTypeTag
+   */
+  public static final Property typeTag = newProperty(0, BHistoryTagEnum.DEFAULT, null);
+  
+  /**
+   * Get the {@code typeTag} property.
+   * @see #typeTag
+   */
+  public BHistoryTagEnum getTypeTag() { return (BHistoryTagEnum)get(typeTag); }
+  
+  /**
+   * Set the {@code typeTag} property.
+   * @see #typeTag
+   */
+  public void setTypeTag(BHistoryTagEnum v) { set(typeTag, v, null); }
 
 ////////////////////////////////////////////////////////////////
 // Type
@@ -40,6 +66,38 @@ public final class BStringHistoryRecord
   public static final Type TYPE = Sys.loadType(BStringHistoryRecord.class);
 
 /*+ ------------ END BAJA AUTO GENERATED CODE -------------- +*/
+
+    @Override
+    protected void doReadTrend(DataInput in) throws IOException {
+        super.doReadTrend(in);
+        this.setTypeTag(BHistoryTagEnum.make(in.readInt()));
+    }
+
+    @Override
+    protected void doWriteTrend(DataOutput out) throws IOException {
+        super.doWriteTrend(out);
+        out.writeInt(this.getTypeTag().getOrdinal());
+    }
+
+    /**
+     *
+     * @param timestamp
+     * @param tag
+     * @param value
+     * @param status
+     * @return
+     */
+    public BStringHistoryRecord set(BAbsTime timestamp,
+                                  BHistoryTagEnum tag,
+                                  String value,
+                                  BStatus  status)
+    {
+        this.setTimestamp(timestamp);
+        this.setTypeTag(tag);
+        this.setValue(value);
+        this.setStatus(status);
+        return this;
+    }
 
     @Override
     public String toJSONString() {

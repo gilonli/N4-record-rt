@@ -6,6 +6,21 @@
 # display.enum
 ###################################
 
+# BAlarmLevelTypeEnum
+display.enum.alarmLevelType.emergency=emergency
+display.enum.alarmLevelType.booleanTrip=booleanTrip
+display.enum.alarmLevelType.booleanAlarm=booleanAlarm
+display.enum.alarmLevelType.booleanWarning=booleanWarning
+display.enum.alarmLevelType.numericHighTrip=numericHighTrip
+display.enum.alarmLevelType.numericHighAlarm=numericHighAlarm
+display.enum.alarmLevelType.numericHighWarning=numericHighWarning
+display.enum.alarmLevelType.numericLowTrip=numericLowTrip
+display.enum.alarmLevelType.numericLowAlarm=numericLowAlarm
+display.enum.alarmLevelType.numericLowWarning=numericLowWarning
+display.enum.alarmLevelType.enumTrip=enumTrip
+display.enum.alarmLevelType.enumAlarm=enumAlarm
+display.enum.alarmLevelType.enumWarning=enumWarning
+
 # BControlPointTypeEnum
 display.enum.controlPointType.numeric=numeric
 display.enum.controlPointType.boolean=boolean
@@ -96,24 +111,23 @@ api.json.value.runCount.value.false=stop
 # api.jsonObj
 ###################################
 
-
-api.json.alarmCount.timestamp.mills=timeStamp
+api.json.alarmCount.timestamp.mills=time
 api.json.alarmCount.tag=tag
 api.json.alarmCount.value=value
 api.json.alarmCount.count=count
-api.json.alarmCount.startFrom.mills=startFrom
-api.json.alarmCount.endAt.mills=endAt
-api.json.alarmCount.keptTime.mills=keptTime
+api.json.alarmCount.startFrom.mills=start
+api.json.alarmCount.endAt.mills=end
+api.json.alarmCount.keptTime.mills=kept
 
-api.json.alarmLog.occureTime.mills=occureTime
-api.json.alarmLog.recoverTime.mills=recoverTime
-api.json.alarmLog.acknowledgeTime.mills=ackTime
+api.json.alarmLog.occureTime.mills=occure
+api.json.alarmLog.recoverTime.mills=recover
+api.json.alarmLog.acknowledgeTime.mills=ack
 api.json.alarmLog.alarmUuid=alarmUuid
 api.json.alarmLog.sourceUuid=sourceUuid
-api.json.alarmLog.stationName=stationName
-api.json.alarmLog.stationDiaplsyName=stationDiaplsyName
+api.json.alarmLog.stationName=station
+api.json.alarmLog.stationDisplayName=stationDisp
 api.json.alarmLog.deviceName=deviceName
-api.json.alarmLog.deviceDisplayName=deviceDisplayName
+api.json.alarmLog.deviceDisplayName=deviceDisp
 api.json.alarmLog.sourceString=sourceString
 api.json.alarmLog.sourceTarget=sourceTarget
 api.json.alarmLog.alarmMessage=alarmMessage
@@ -126,9 +140,9 @@ api.json.openAlarm.occureTime.mills=occureTime
 api.json.openAlarm.alarmUuid=alarmUuid
 api.json.openAlarm.sourceUuid=sourceUuid
 api.json.openAlarm.stationName=stationName
-api.json.openAlarm.stationDiaplsyName=stationDiaplsyName
+api.json.openAlarm.stationDisplayName=stationDisp
 api.json.openAlarm.deviceName=deviceName
-api.json.openAlarm.deviceDisplayName=deviceDisplayName
+api.json.openAlarm.deviceDisplayName=deviceDisp
 api.json.openAlarm.sourceString=sourceString
 api.json.openAlarm.sourceTarget=sourceTarget
 api.json.openAlarm.alarmMessage=alarmMessage
@@ -137,9 +151,9 @@ api.json.openAlarm.limitValue=limitValue
 api.json.openAlarm.note=note
 api.json.openAlarm.repeatTimes=repeatTimes
 
-api.json.booleanHistory.timestamp.mills=timestamp
-api.json.booleanHistory.value=value
-api.json.booleanHistory.statue=statue
+api.json.booleanHistory.timestamp.mills=t
+api.json.booleanHistory.value=v
+api.json.booleanHistory.statue=s
 
 api.json.deviceSummary.start=start
 api.json.deviceSummary.end=end
@@ -147,18 +161,18 @@ api.json.deviceSummary.held=held
 api.json.deviceSummary.tag=tag
 api.json.deviceSummary.note=note
 
-api.json.energy.endAt.mills=endAt
-api.json.energy.meterRead=meterRead
-api.json.energy.cost=cost
+api.json.energy.endAt.mills=t
+api.json.energy.meterRead=r
+api.json.energy.cost=c
 
-api.json.enumHistory.timestamp.mills=timestamp
-api.json.enumHistory.value=value
-api.json.enumHistory.statue=statue
+api.json.enumHistory.timestamp.mills=t
+api.json.enumHistory.value=v
+api.json.enumHistory.statue=s
 
-api.json.bill.endAt.mills=endAt
-api.json.bill.cost=cost
-api.json.bill.fee=fee
-api.json.bill.bill=bill
+api.json.bill.endAt.mills=t
+api.json.bill.cost=c
+api.json.bill.fee=f
+api.json.bill.bill=b
 
 api.json.gpsPosition.timestamp.mills=timestamp
 api.json.gpsPosition.longitude=lng
@@ -172,28 +186,28 @@ api.json.gpsPosition.directTag=directTag
 api.json.gpsPosition.updateTime.mills=updateTime
 api.json.gpsPosition.satelliteCount=satellites
 
-api.json.log.timeStamp.mills=timestamp
-api.json.log.text=text
+api.json.log.timeStamp.mills=t
+api.json.log.text=l
 
-api.json.numericHistory.timestamp.mills=timestamp
-api.json.numericHistory.value=value
-api.json.numericHistory.statue=statue
+api.json.numericHistory.timestamp.mills=t
+api.json.numericHistory.value=v
+api.json.numericHistory.statue=s
 
-json.api.runCount.timestamp=timestamp
+json.api.runCount.timestamp=time
 json.api.runCount.tag=tag
 json.api.runCount.value=value
 json.api.runCount.startCount=count
-json.api.runCount.startFrom.mills=startFrom
-json.api.runCount.endAt.mills=endAt
-json.api.runCount.keptTime.mills=keptTime
+json.api.runCount.startFrom.mills=start
+json.api.runCount.endAt.mills=end
+json.api.runCount.keptTime.mills=kept
 
 api.json.stationSummary.typeTag=tag
 api.json.stationSummary.deviceCount=deviceCount
-api.json.stationSummary.deviceOnlineCount=deviceOnlineCount
-api.json.stationSummary.deviceRunCount=deviceRunCount
-api.json.stationSummary.deviceRunMinutes=deviceRunMinutes
-api.json.stationSummary.deviceAlarmingCount=deviceAlarmingCount
+api.json.stationSummary.deviceOnlineCount=online
+api.json.stationSummary.deviceRunCount=running
+api.json.stationSummary.deviceRunMinutes=runMinutes
+api.json.stationSummary.deviceAlarmingCount=alarming
 
-api.json.stringHistory.timestamp.mills=timestamp
-api.json.stringHistory.value=value
-api.json.stringHistory.statue=statue
+api.json.stringHistory.timestamp.mills=t
+api.json.stringHistory.value=v
+api.json.stringHistory.statue=s

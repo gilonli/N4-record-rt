@@ -12,19 +12,19 @@ extends **BTrendRecord**
 ## to JSON String
 | key | 赋值 | 说明 | 取值 |
 |:-------|:------|:-------|:---------|
-| timestamp | `this.getTimestamp().getMillis()` | 记录时间戳(毫秒) | long |
-| value | `new DecimalFormat(",##0.00").format(this.getValue())` | 记录值 | double |
-| statue | `this.getStatus().getBits()` | 数据状态 | int |
+| t | `this.getTimestamp().getMillis()` | 记录时间戳(毫秒) | long |
+| v | `new DecimalFormat(",##0.00").format(this.getValue())` | 记录值 | double |
+| s | `this.getStatus().getBits()` | 数据状态 | int |
 
 ## lexicon
 | key | value |
 |:-------|:------|
-| api.json.numericHistory.timestamp.mills | timestamp |
-| api.json.numericHistory.value | value |
-| api.json.numericHistory.statue | statue |
+| api.json.numericHistory.timestamp.mills | t |
+| api.json.numericHistory.value | v |
+| api.json.numericHistory.statue | s |
 
 ```
-api.json.numericHistory.timestamp.mills=timestamp
-api.json.numericHistory.value=value
-api.json.numericHistory.statue=statue
+api.json.numericHistory.timestamp.mills=t
+api.json.numericHistory.value=v
+api.json.numericHistory.statue=s
 ```

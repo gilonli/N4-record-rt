@@ -15,22 +15,22 @@ extends **BTrendRecord**
 ## to JSON String
 | key | 赋值 | 说明 | 取值 |
 |:-------|:------|:-------|:---------|
-| endAt | `this.getEndAt().getMillis()` | 记录时间戳(毫秒) | long |
-| cost | `this.getCost()` | 记录周期内消耗 | double |
-| fee | `this.getFee()` | 记录周期内平均价格 | double |
-| bill | `this.getBill()` | 记录周期内的费用 | double |
+| t | `this.getEndAt().getMillis()` | 记录时间戳(毫秒) | long |
+| c | `this.getCost()` | 记录周期内消耗 | double |
+| f | `this.getFee()` | 记录周期内平均价格 | double |
+| b | `this.getBill()` | 记录周期内的费用 | double |
 
 ## lexicon
 | key | value |
 |:-------|:------|
-| api.json.bill.endAt.mills | endAt |
-| api.json.bill.cost | cost |
-| api.json.bill.fee | fee |
-| api.json.bill.bill | bill |
+| api.json.bill.endAt.mills | t |
+| api.json.bill.cost | v |
+| api.json.bill.fee | f |
+| api.json.bill.bill | b |
 
 ```
-api.json.bill.endAt.mills=endAt
-api.json.bill.cost=cost
-api.json.bill.fee=fee
-api.json.bill.bill=bill
+api.json.bill.endAt.mills=t
+api.json.bill.cost=c
+api.json.bill.fee=f
+api.json.bill.bill=b
 ```

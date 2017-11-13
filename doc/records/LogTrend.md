@@ -11,16 +11,16 @@ extends **BHistoryRecord**
 ## to JSON String
 | key | 赋值 | 说明 | 取值 |
 |:-------|:------|:-------|:---------|
-| timestamp | `this.getTimestamp().getMillis()` | 记录时间戳(毫秒) | long |
-| text | `this.getLogText()` | 日志内容 | String |
+| t | `this.getTimestamp().getMillis()` | 记录时间戳(毫秒) | long |
+| l | `this.getLogText()` | 日志内容 | String |
 
 ## lexicon
 | key | value |
 |:-------|:------|
-| api.json.log.timestamp.mills | timestamp |
-| api.json.log.text | text |
+| api.json.log.timestamp.mills | t |
+| api.json.log.text | l |
 
 ```
-api.json.log.timeStamp.mills=timestamp
-api.json.log.text=text
+api.json.log.timeStamp.mills=t
+api.json.log.text=l
 ```

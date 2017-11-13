@@ -1,5 +1,11 @@
 # Change Log
 
+## record-rt v1.2 - Released on Nov 13, 2017
+* 增加**报警点类型**枚举[BAlarmLevelTypeEnum](./doc/enums/AlarmLevelTypeEnum.md)
+* [EnumHistoryRecord](./doc/records/EnumHistory.md)，[StringHistoryRecord](./doc/records/StringHistory.md)增加tag字段和set()方法
+* 缩减JSON的key长度
+* 修正[BAlarmLogRecord](./doc/records/AlarmLogRecord.md)和[BAlarmOpenRecord](./doc/records/AlarmOpenRecord.md)的stationDisplayName属性的拼写，并增加字符串常量作为AlarmData的key
+
 ## record-rt v1.1 - Released on Nov 9, 2017
 * 增加**报警完整日志记录**类型[BAlarmLogRecord](./doc/records/AlarmLogRecord.md)和**报警发生日志记录**类型[BAlarmOpenRecord](./doc/records/AlarmOpenRecord.md)
 * Enums增加以下方法

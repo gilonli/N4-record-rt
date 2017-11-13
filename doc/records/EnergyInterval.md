@@ -14,19 +14,19 @@ extends **BTrendRecord**
 ## to JSON String
 | key | 赋值 | 说明 | 取值 |
 |:-------|:------|:-------|:---------|
-| endAt | `this.getEndAt().getMillis()` | 记录截止时间(毫秒) | long |
-| meterRead | `this.getMeterRead()` | 表读数 | double |
-| cost | `this.getCost()` | 记录周期内消耗 | double |
+| t | `this.getEndAt().getMillis()` | 记录截止时间(毫秒) | long |
+| r | `this.getMeterRead()` | 表读数 | double |
+| c | `this.getCost()` | 记录周期内消耗 | double |
 
 ## lexicon
 | key | value |
 |:-------|:------|
-| api.json.energy.endAt.mills | endAt |
-| api.json.energy.meterRead | meterRead |
-| api.json.energy.cost | cost |
+| api.json.energy.endAt.mills | t |
+| api.json.energy.meterRead | r |
+| api.json.energy.cost | c |
 
 ```
-api.json.energy.endAt.mills=endAt
-api.json.energy.meterRead=meterRead
-api.json.energy.cost=cost
+api.json.energy.endAt.mills=t
+api.json.energy.meterRead=r
+api.json.energy.cost=c
 ```

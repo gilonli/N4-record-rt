@@ -3,6 +3,7 @@ package com.guardian.historyRecord;
 import com.guardian.json.JSONObj;
 import com.guardian.json.JSONSupport;
 
+import javax.baja.alarm.BAlarmRecord;
 import javax.baja.history.BHistoryRecord;
 import javax.baja.nre.annotations.NiagaraProperty;
 import javax.baja.nre.annotations.NiagaraType;
@@ -40,7 +41,7 @@ import java.io.IOException;
         flags = Flags.READONLY | Flags.HIDDEN
 )
 @NiagaraProperty(
-        name = "stationDiaplsyName",
+        name = "stationDisplayName",
         type = "String",
         defaultValue = "-",
         flags = Flags.READONLY | Flags.HIDDEN
@@ -105,8 +106,8 @@ public final class BAlarmOpenRecord
         implements JSONSupport
 {
 /*+ ------------ BEGIN BAJA AUTO GENERATED CODE ------------ +*/
-/*@ $com.guardian.historyRecord.BAlarmOpenRecord(1012298142)1.0$ @*/
-/* Generated Thu Nov 09 10:10:28 CST 2017 by Slot-o-Matic (c) Tridium, Inc. 2012 */
+/*@ $com.guardian.historyRecord.BAlarmOpenRecord(4163449431)1.0$ @*/
+/* Generated Mon Nov 13 08:34:20 CST 2017 by Slot-o-Matic (c) Tridium, Inc. 2012 */
 
 ////////////////////////////////////////////////////////////////
 // Property "occureTime"
@@ -140,7 +141,7 @@ public final class BAlarmOpenRecord
    * @see #getAlarmUuid
    * @see #setAlarmUuid
    */
-  public static final Property alarmUuid = newProperty(Flags.HIDDEN, "", null);
+  public static final Property alarmUuid = newProperty(Flags.HIDDEN, "-", null);
   
   /**
    * Get the {@code alarmUuid} property.
@@ -163,7 +164,7 @@ public final class BAlarmOpenRecord
    * @see #getSourceUuid
    * @see #setSourceUuid
    */
-  public static final Property sourceUuid = newProperty(Flags.HIDDEN, "", null);
+  public static final Property sourceUuid = newProperty(Flags.HIDDEN, "-", null);
   
   /**
    * Get the {@code sourceUuid} property.
@@ -186,7 +187,7 @@ public final class BAlarmOpenRecord
    * @see #getStationName
    * @see #setStationName
    */
-  public static final Property stationName = newProperty(Flags.READONLY | Flags.HIDDEN, "", null);
+  public static final Property stationName = newProperty(Flags.READONLY | Flags.HIDDEN, "-", null);
   
   /**
    * Get the {@code stationName} property.
@@ -201,27 +202,27 @@ public final class BAlarmOpenRecord
   public void setStationName(String v) { setString(stationName, v, null); }
 
 ////////////////////////////////////////////////////////////////
-// Property "stationDiaplsyName"
+// Property "stationDisplayName"
 ////////////////////////////////////////////////////////////////
   
   /**
-   * Slot for the {@code stationDiaplsyName} property.
-   * @see #getStationDiaplsyName
-   * @see #setStationDiaplsyName
+   * Slot for the {@code stationDisplayName} property.
+   * @see #getStationDisplayName
+   * @see #setStationDisplayName
    */
-  public static final Property stationDiaplsyName = newProperty(Flags.READONLY | Flags.HIDDEN, "", null);
+  public static final Property stationDisplayName = newProperty(Flags.READONLY | Flags.HIDDEN, "-", null);
   
   /**
-   * Get the {@code stationDiaplsyName} property.
-   * @see #stationDiaplsyName
+   * Get the {@code stationDisplayName} property.
+   * @see #stationDisplayName
    */
-  public String getStationDiaplsyName() { return getString(stationDiaplsyName); }
+  public String getStationDisplayName() { return getString(stationDisplayName); }
   
   /**
-   * Set the {@code stationDiaplsyName} property.
-   * @see #stationDiaplsyName
+   * Set the {@code stationDisplayName} property.
+   * @see #stationDisplayName
    */
-  public void setStationDiaplsyName(String v) { setString(stationDiaplsyName, v, null); }
+  public void setStationDisplayName(String v) { setString(stationDisplayName, v, null); }
 
 ////////////////////////////////////////////////////////////////
 // Property "deviceName"
@@ -232,7 +233,7 @@ public final class BAlarmOpenRecord
    * @see #getDeviceName
    * @see #setDeviceName
    */
-  public static final Property deviceName = newProperty(Flags.READONLY, "", null);
+  public static final Property deviceName = newProperty(Flags.READONLY, "-", null);
   
   /**
    * Get the {@code deviceName} property.
@@ -255,7 +256,7 @@ public final class BAlarmOpenRecord
    * @see #getDeviceDisplayName
    * @see #setDeviceDisplayName
    */
-  public static final Property deviceDisplayName = newProperty(Flags.READONLY, "", null);
+  public static final Property deviceDisplayName = newProperty(Flags.READONLY, "-", null);
   
   /**
    * Get the {@code deviceDisplayName} property.
@@ -278,7 +279,7 @@ public final class BAlarmOpenRecord
    * @see #getSourceString
    * @see #setSourceString
    */
-  public static final Property sourceString = newProperty(Flags.READONLY, "", null);
+  public static final Property sourceString = newProperty(Flags.READONLY, "-", null);
   
   /**
    * Get the {@code sourceString} property.
@@ -301,7 +302,7 @@ public final class BAlarmOpenRecord
    * @see #getSourceTarget
    * @see #setSourceTarget
    */
-  public static final Property sourceTarget = newProperty(Flags.READONLY, "", null);
+  public static final Property sourceTarget = newProperty(Flags.READONLY, "-", null);
   
   /**
    * Get the {@code sourceTarget} property.
@@ -324,7 +325,7 @@ public final class BAlarmOpenRecord
    * @see #getAlarmMessage
    * @see #setAlarmMessage
    */
-  public static final Property alarmMessage = newProperty(Flags.READONLY, "", null);
+  public static final Property alarmMessage = newProperty(Flags.READONLY, "-", null);
   
   /**
    * Get the {@code alarmMessage} property.
@@ -347,7 +348,7 @@ public final class BAlarmOpenRecord
    * @see #getAlarmValue
    * @see #setAlarmValue
    */
-  public static final Property alarmValue = newProperty(Flags.READONLY, "", null);
+  public static final Property alarmValue = newProperty(Flags.READONLY, "-", null);
   
   /**
    * Get the {@code alarmValue} property.
@@ -370,7 +371,7 @@ public final class BAlarmOpenRecord
    * @see #getLimitValue
    * @see #setLimitValue
    */
-  public static final Property limitValue = newProperty(Flags.READONLY, "", null);
+  public static final Property limitValue = newProperty(Flags.READONLY, "-", null);
   
   /**
    * Get the {@code limitValue} property.
@@ -393,7 +394,7 @@ public final class BAlarmOpenRecord
    * @see #getNote
    * @see #setNote
    */
-  public static final Property note = newProperty(Flags.READONLY, "", null);
+  public static final Property note = newProperty(Flags.READONLY, "-", null);
   
   /**
    * Get the {@code note} property.
@@ -451,7 +452,7 @@ public final class BAlarmOpenRecord
         this.setAlarmUuid(dataInput.readUTF());
         this.setSourceUuid(dataInput.readUTF());
         this.setStationName(dataInput.readUTF());
-        this.setStationDiaplsyName(dataInput.readUTF());
+        this.setStationDisplayName(dataInput.readUTF());
         this.setDeviceName(dataInput.readUTF());
         this.setDeviceDisplayName(dataInput.readUTF());
         this.setSourceString(dataInput.readUTF());
@@ -469,7 +470,7 @@ public final class BAlarmOpenRecord
         dataOutput.writeUTF(this.getAlarmUuid());
         dataOutput.writeUTF(this.getSourceUuid());
         dataOutput.writeUTF(this.getStationName());
-        dataOutput.writeUTF(this.getStationDiaplsyName());
+        dataOutput.writeUTF(this.getStationDisplayName());
         dataOutput.writeUTF(this.getDeviceName());
         dataOutput.writeUTF(this.getDeviceDisplayName());
         dataOutput.writeUTF(this.getSourceString());
@@ -479,6 +480,64 @@ public final class BAlarmOpenRecord
         dataOutput.writeUTF(this.getLimitValue());
         dataOutput.writeUTF(this.getNote());
         dataOutput.writeLong(this.getRepeatTimes());
+    }
+
+    /**
+     *
+     * @param record
+     */
+    public void set(BAlarmRecord record) {
+        this.setOccureTime(record.getTimestamp());
+        this.setAlarmUuid(record.getUuid().toString());
+        String v;
+        try {
+            v = record.getAlarmData().get(BAlarmOpenRecord.SOURCE_UUID).toString();
+            this.setSourceUuid(v);
+        } catch (Exception e) {}
+        try {
+            v = record.getAlarmData().get(BAlarmOpenRecord.STATION_NAME).toString();
+            this.setStationName(v);
+        } catch (Exception e) {}
+        try {
+            v = record.getAlarmData().get(BAlarmOpenRecord.STATION_DISPLAY_NAME).toString();
+            this.setStationDisplayName(v);
+        } catch (Exception e) {}
+        try {
+            v = record.getAlarmData().get(BAlarmOpenRecord.DEVICE_NAME).toString();
+            this.setDeviceName(v);
+        } catch (Exception e) {}
+        try {
+            v = record.getAlarmData().get(BAlarmOpenRecord.DEVICE_DISPLAY_NAME).toString();
+            this.setDeviceDisplayName(v);
+        } catch (Exception e) {}
+        try {
+            v = record.getAlarmData().get(BAlarmOpenRecord.SOURCE_STRING).toString();
+            this.setSourceString(v);
+        } catch (Exception e) {}
+        try {
+            v = record.getAlarmData().get(BAlarmOpenRecord.SOURCE_TARGET).toString();
+            this.setSourceTarget(v);
+        } catch (Exception e) {}
+        try {
+            v = record.getAlarmData().get(BAlarmOpenRecord.ALARM_MESSAGE).toString();
+            this.setAlarmMessage(v);
+        } catch (Exception e) {}
+        try {
+            v = record.getAlarmData().get(BAlarmOpenRecord.ALARM_VALUE).toString();
+            this.setAlarmValue(v);
+        } catch (Exception e) {}
+        try {
+            v = record.getAlarmData().get(BAlarmOpenRecord.LIMIT_VALUE).toString();
+            this.setLimitValue(v);
+        } catch (Exception e) {}
+        try {
+            v = record.getAlarmData().get(BAlarmOpenRecord.NOTE).toString();
+            this.setNote(v);
+        } catch (Exception e) {}
+        try {
+            v = record.getAlarmData().get(BAlarmOpenRecord.REPEAT_TIMES).toString();
+            this.setRepeatTimes(Integer.valueOf(v));
+        } catch (Exception e) {}
     }
 
     @Override
@@ -498,7 +557,7 @@ public final class BAlarmOpenRecord
         jsonObj.put(this.getLexicon().get("api.json.openAlarm.alarmUuid"),this.getAlarmUuid());
         jsonObj.put(this.getLexicon().get("api.json.openAlarm.sourceUuid"),this.getSourceUuid());
         jsonObj.put(this.getLexicon().get("api.json.openAlarm.stationName"),this.getStationName());
-        jsonObj.put(this.getLexicon().get("api.json.openAlarm.stationDiaplsyName"),this.getStationDiaplsyName());
+        jsonObj.put(this.getLexicon().get("api.json.openAlarm.stationDiaplsyName"),this.getStationDisplayName());
         jsonObj.put(this.getLexicon().get("api.json.openAlarm.deviceName"),this.getDeviceName());
         jsonObj.put(this.getLexicon().get("api.json.openAlarm.deviceDisplayName"),this.getDeviceDisplayName());
         jsonObj.put(this.getLexicon().get("api.json.openAlarm.sourceString"),this.getSourceString());
@@ -511,4 +570,16 @@ public final class BAlarmOpenRecord
         return jsonObj;
     }
 
+    public final static String SOURCE_UUID = "sourceUuid";
+    public final static String STATION_NAME = "stationName";
+    public final static String STATION_DISPLAY_NAME = "stationDisplayName";
+    public final static String DEVICE_NAME = "deviceName";
+    public final static String DEVICE_DISPLAY_NAME = "deviceDisplayName";
+    public final static String SOURCE_STRING = "sourceString";
+    public final static String SOURCE_TARGET = "sourceTarget";
+    public final static String ALARM_MESSAGE = "alarmMessage";
+    public final static String ALARM_VALUE = "alarmValue";
+    public final static String LIMIT_VALUE = "limitValue";
+    public final static String NOTE = "note";
+    public final static String REPEAT_TIMES = "repeatTimes";
 }

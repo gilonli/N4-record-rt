@@ -12,6 +12,7 @@
   <type class="com.guardian.historyRecord.enums.BLatTagEnum" name="LatTagEnum"/>
   <type class="com.guardian.historyRecord.enums.BLngTagEnum" name="LngTagEnum"/>
   <type class="com.guardian.historyRecord.enums.BLogTypeEnum" name="LogTypeEnum"/>
+  <type class="com.guardian.historyRecord.enums.BAlarmLevelTypeEnum" name="AlarmLevelTypeEnum"/>
   <!--com.guardian.historyRecord-->
   <type class="com.guardian.historyRecord.BAlarmCountHistoryRecord" name="AlarmCountHistoryRecord"/>
   <type class="com.guardian.historyRecord.BAlarmLogRecord" name="AlarmLogRecord"/>

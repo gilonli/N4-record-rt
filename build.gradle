@@ -9,7 +9,7 @@ description     = "history record and reference enums, and json support"
 ext {
   name            = "record"
   project.group   = "guardian"
-  project.version = "1.1"
+  project.version = "1.2"
   description = "history record and reference enums, and json support"
 }
 
@@ -20,6 +20,7 @@ niagaraModule {
 }
 
 dependencies {
+    compile "Tridium:alarm-rt:4.0"
     compile "Tridium:baja:4.0"
     compile "Tridium:control-rt:4.0"
     compile "Tridium:history-rt:4.0"

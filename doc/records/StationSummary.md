@@ -17,26 +17,26 @@ extends **BTrendRecord**
 |:-------|:------|:-------|:---------|
 | tag | `this.getTypeTag()` | 记录数据的统计时间类型 | minute/hour/day/week/month/year/cov |
 | deviceCount | `this.getDeviceCount()` | 设备总数 | long |
-| deviceOnlineCount | `this.getDeviceOnlineCount()` | 在线设备总数 | long |
-| deviceRunCount | `this.getDeviceRunCount()` | 运行设备总数 | long |
-| deviceRunMinutes | `this.getDeviceRunMinutesInHour()` | 设备总运行时间(分钟) | long |
-| deviceAlarmingCount | `this.getDeviceAlarmingCount()` | 设备总报警条数 | long |
+| online | `this.getDeviceOnlineCount()` | 在线设备总数 | long |
+| running | `this.getDeviceRunCount()` | 运行设备总数 | long |
+| runMinutes | `this.getDeviceRunMinutesInHour()` | 设备总运行时间(分钟) | long |
+| alarming | `this.getDeviceAlarmingCount()` | 设备总报警条数 | long |
 
 ## lexicon
 | key | value |
 |:-------|:------|
 | api.json.stationSummary.typeTag | tag |
 | api.json.stationSummary.deviceCount | deviceCount |
-| api.json.stationSummary.deviceOnlineCount | deviceOnlineCount |
-| api.json.stationSummary.deviceRunCount | deviceRunCount |
-| api.json.stationSummary.deviceRunMinutes | deviceRunMinutes |
-| api.json.stationSummary.deviceAlarmingCount | deviceAlarmingCount |
+| api.json.stationSummary.deviceOnlineCount | online |
+| api.json.stationSummary.deviceRunCount | running |
+| api.json.stationSummary.deviceRunMinutes | runMinutes |
+| api.json.stationSummary.deviceAlarmingCount | alarming |
 
 ```
 api.json.stationSummary.typeTag=tag
 api.json.stationSummary.deviceCount=deviceCount
-api.json.stationSummary.deviceOnlineCount=deviceOnlineCount
-api.json.stationSummary.deviceRunCount=deviceRunCount
-api.json.stationSummary.deviceRunMinutes=deviceRunMinutes
-api.json.stationSummary.deviceAlarmingCount=deviceAlarmingCount
+api.json.stationSummary.deviceOnlineCount=online
+api.json.stationSummary.deviceRunCount=running
+api.json.stationSummary.deviceRunMinutes=runMinutes
+api.json.stationSummary.deviceAlarmingCount=alarming
 ```

@@ -6,7 +6,8 @@
 ## ENUMS
 
 | 名称 | 说明 |
-|:-------------:|:----------------:|
+|:-------------|:----------------|
+| [AlarmLevelTypeEnum](./doc/enums/AlarmLevelTypeEnum.md) | 控制点类型 |
 | [ControlPointTypeEnum](./doc/enums/ControlPointTypeEnum.md) | 控制点类型 |
 | [DirectEnum](./doc/enums/DirectEnum.md) | 方向，包含静止时无方向 |
 | [HistoryPolicyEnum](./doc/enums/HistoryPolicyEnum.md) | 模拟量在一个时间段内整理为单点历史记录方式 |
@@ -21,7 +22,7 @@
 ## RECORDS
 
 | 名称 | 说明 | 父类 |
-|:-------------:|:----------------:|:------------|
+|:-------------|:----------------|:------------|
 | [AlarmCountHistoryRecord](./doc/records/AlarmCountHistory.md) | 报警统计记录 | BTrendRecord |
 | [AlarmLogRecord](./doc/records/AlarmLogRecord.md) | 报警日志记录 | BHistoryRecord |
 | [AlarmOpenRecord](./doc/records/AlarmOpenRecord.md) | 未恢复的报警记录 | BHistoryRecord |
