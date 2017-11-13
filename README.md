@@ -7,7 +7,7 @@
 
 | 名称 | 说明 |
 |:-------------|:----------------|
-| [AlarmLevelTypeEnum](./doc/enums/AlarmLevelTypeEnum.md) | 控制点类型 |
+| [AlarmLevelTypeEnum](./doc/enums/AlarmLevelTypeEnum.md) | 报警点类型 |
 | [ControlPointTypeEnum](./doc/enums/ControlPointTypeEnum.md) | 控制点类型 |
 | [DirectEnum](./doc/enums/DirectEnum.md) | 方向，包含静止时无方向 |
 | [HistoryPolicyEnum](./doc/enums/HistoryPolicyEnum.md) | 模拟量在一个时间段内整理为单点历史记录方式 |
