@@ -1,5 +1,8 @@
 # Change Log
 
+## record-rt v1.3 - Released on Nov 17, 2017
+* 为满足包名全小写规则，将com.guardian.historyRecord改为[com.guardian.history.record](src/com/guardian/history/records)，将com.guardian.historyRecord.enums改为[com.guardian.enums](src/com/guardian/enums)
+
 ## record-rt v1.2 - Released on Nov 13, 2017
 * 增加**报警点类型**枚举[BAlarmLevelTypeEnum](./doc/enums/AlarmLevelTypeEnum.md)
 * [EnumHistoryRecord](./doc/records/EnumHistory.md)，[StringHistoryRecord](./doc/records/StringHistory.md)增加tag字段和set()方法

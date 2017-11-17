@@ -2,30 +2,46 @@
 <!-- Types -->
 <types>
   <!--com.guardian.historyRecord-->
-  <!--com.guardian.historyRecord.enums-->
-  <type class="com.guardian.historyRecord.enums.BControlPointTypeEnum" name="ControlPointTypeEnum"/>
-  <type class="com.guardian.historyRecord.enums.BDirectEnum" name="DirectEnum"/>
-  <type class="com.guardian.historyRecord.enums.BHistoryPolicyEnum" name="HistoryPolicyEnum"/>
-  <type class="com.guardian.historyRecord.enums.BHistoryRecordMethodEnum" name="HistoryRecordMethodEnum"/>
-  <type class="com.guardian.historyRecord.enums.BHistoryTagEnum" name="HistoryTagEnum"/>
-  <type class="com.guardian.historyRecord.enums.BHistoryTypeEnum" name="HistoryTypeEnum"/>
-  <type class="com.guardian.historyRecord.enums.BLatTagEnum" name="LatTagEnum"/>
-  <type class="com.guardian.historyRecord.enums.BLngTagEnum" name="LngTagEnum"/>
-  <type class="com.guardian.historyRecord.enums.BLogTypeEnum" name="LogTypeEnum"/>
-  <type class="com.guardian.historyRecord.enums.BAlarmLevelTypeEnum" name="AlarmLevelTypeEnum"/>
+  <!--com.guardian.enums-->
+  <type class="com.guardian.enums.BControlPointTypeEnum" name="ControlPointTypeEnum"/>
+  <type class="com.guardian.enums.BDirectEnum" name="DirectEnum"/>
+  <type class="com.guardian.enums.BHistoryPolicyEnum" name="HistoryPolicyEnum"/>
+  <type class="com.guardian.enums.BHistoryRecordMethodEnum" name="HistoryRecordMethodEnum"/>
+  <type class="com.guardian.enums.BHistoryTagEnum" name="HistoryTagEnum"/>
+  <type class="com.guardian.enums.BHistoryTypeEnum" name="HistoryTypeEnum"/>
+  <type class="com.guardian.enums.BLatTagEnum" name="LatTagEnum"/>
+  <type class="com.guardian.enums.BLngTagEnum" name="LngTagEnum"/>
+  <type class="com.guardian.enums.BLogTypeEnum" name="LogTypeEnum"/>
+  <type class="com.guardian.enums.BAlarmLevelTypeEnum" name="AlarmLevelTypeEnum"/>
   <!--com.guardian.historyRecord-->
-  <type class="com.guardian.historyRecord.BAlarmCountHistoryRecord" name="AlarmCountHistoryRecord"/>
-  <type class="com.guardian.historyRecord.BAlarmLogRecord" name="AlarmLogRecord"/>
-  <type class="com.guardian.historyRecord.BAlarmOpenRecord" name="AlarmOpenRecord"/>
-  <type class="com.guardian.historyRecord.BBooleanHistoryRecord" name="BooleanHistoryRecord"/>
-  <type class="com.guardian.historyRecord.BDeviceSummaryRecord" name="DeviceSummaryRecord"/>
-  <type class="com.guardian.historyRecord.BEnergyIntervalRecord" name="EnergyIntervalRecord"/>
-  <type class="com.guardian.historyRecord.BEnumHistoryRecord" name="EnumHistoryRecord"/>
-  <type class="com.guardian.historyRecord.BFeeIntervalRecord" name="FeeIntervalRecord"/>
-  <type class="com.guardian.historyRecord.BGpsPositionHistoryRecord" name="GpsPositionHistoryRecord"/>
-  <type class="com.guardian.historyRecord.BLogTrendRecord" name="LogTrendRecord"/>
-  <type class="com.guardian.historyRecord.BNumericHistoryRecord" name="NumericHistoryRecord"/>
-  <type class="com.guardian.historyRecord.BRunCountHistoryRecord" name="RunCountHistoryRecord"/>
-  <type class="com.guardian.historyRecord.BStationSummaryRecord" name="StationSummaryRecord"/>
-  <type class="com.guardian.historyRecord.BStringHistoryRecord" name="StringHistoryRecord"/>
+  <!---->
+  <type class="BAlarmCountHistoryRecord" name="AlarmCountHistoryRecord"/>
+  <type class="BAlarmLogRecord" name="AlarmLogRecord"/>
+  <type class="BAlarmOpenRecord" name="AlarmOpenRecord"/>
+  <type class="BBooleanHistoryRecord" name="BooleanHistoryRecord"/>
+  <type class="BDeviceSummaryRecord" name="DeviceSummaryRecord"/>
+  <type class="BEnergyIntervalRecord" name="EnergyIntervalRecord"/>
+  <type class="BEnumHistoryRecord" name="EnumHistoryRecord"/>
+  <type class="BFeeIntervalRecord" name="FeeIntervalRecord"/>
+  <type class="BGpsPositionHistoryRecord" name="GpsPositionHistoryRecord"/>
+  <type class="BLogTrendRecord" name="LogTrendRecord"/>
+  <type class="BNumericHistoryRecord" name="NumericHistoryRecord"/>
+  <type class="BRunCountHistoryRecord" name="RunCountHistoryRecord"/>
+  <type class="BStationSummaryRecord" name="StationSummaryRecord"/>
+  <type class="BStringHistoryRecord" name="StringHistoryRecord"/>
+  <!--com.guardian.history.records-->
+  <type class="com.guardian.history.records.BAlarmCountHistoryRecord" name="AlarmCountHistoryRecord"/>
+  <type class="com.guardian.history.records.BAlarmLogRecord" name="AlarmLogRecord"/>
+  <type class="com.guardian.history.records.BAlarmOpenRecord" name="AlarmOpenRecord"/>
+  <type class="com.guardian.history.records.BBooleanHistoryRecord" name="BooleanHistoryRecord"/>
+  <type class="com.guardian.history.records.BDeviceSummaryRecord" name="DeviceSummaryRecord"/>
+  <type class="com.guardian.history.records.BEnergyIntervalRecord" name="EnergyIntervalRecord"/>
+  <type class="com.guardian.history.records.BEnumHistoryRecord" name="EnumHistoryRecord"/>
+  <type class="com.guardian.history.records.BFeeIntervalRecord" name="FeeIntervalRecord"/>
+  <type class="com.guardian.history.records.BGpsPositionHistoryRecord" name="GpsPositionHistoryRecord"/>
+  <type class="com.guardian.history.records.BLogTrendRecord" name="LogTrendRecord"/>
+  <type class="com.guardian.history.records.BNumericHistoryRecord" name="NumericHistoryRecord"/>
+  <type class="com.guardian.history.records.BRunCountHistoryRecord" name="RunCountHistoryRecord"/>
+  <type class="com.guardian.history.records.BStationSummaryRecord" name="StationSummaryRecord"/>
+  <type class="com.guardian.history.records.BStringHistoryRecord" name="StringHistoryRecord"/>
 </types>
