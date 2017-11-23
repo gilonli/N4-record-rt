@@ -1,5 +1,8 @@
 # Change Log
 
+## record-rt v1.4 - Released on Nov 23, 2017
+* 修正缺失的[JSONObj](src/com/guardian/json/JSONObj.java)和[JSONList](src/com/guardian/json/JSONList.java)的构造方法
+
 ## record-rt v1.3 - Released on Nov 17, 2017
 * 为满足包名全小写规则，将com.guardian.historyRecord改为[com.guardian.history.records](src/com/guardian/history/records)，将com.guardian.historyRecord.enums改为[com.guardian.enums](src/com/guardian/enums)
 
