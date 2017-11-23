@@ -41,3 +41,6 @@
 ***
 ## JSON
 继承JSONObject和JSONArray的类[JSONObj](src/com/guardian/json/JSONObj.java)和[JSONList](src/com/guardian/json/JSONList.java)，覆盖了原`toString()`方法，处理了生成字符串时unicode编码"$u"开头的问题
+***
+## lexicon
+默认[lexicon](module.lexicon)为中文，在生成jar中包含[record.lexicon](src/lexicons/record.lexicon)为英文

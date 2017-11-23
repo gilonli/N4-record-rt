@@ -1,5 +1,8 @@
 # Change Log
 
+## record-rt v1.5 - Released on Nov 23, 2017
+* fix [module-include.xml](module-include.xml)
+
 ## record-rt v1.4 - Released on Nov 23, 2017
 * 修正缺失的[JSONObj](src/com/guardian/json/JSONObj.java)和[JSONList](src/com/guardian/json/JSONList.java)的构造方法
 

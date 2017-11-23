@@ -1,7 +1,6 @@
 <!-- Module Include File -->
 <!-- Types -->
 <types>
-  <!--com.guardian.historyRecord-->
   <!--com.guardian.enums-->
   <type class="com.guardian.enums.BControlPointTypeEnum" name="ControlPointTypeEnum"/>
   <type class="com.guardian.enums.BDirectEnum" name="DirectEnum"/>
@@ -13,22 +12,6 @@
   <type class="com.guardian.enums.BLngTagEnum" name="LngTagEnum"/>
   <type class="com.guardian.enums.BLogTypeEnum" name="LogTypeEnum"/>
   <type class="com.guardian.enums.BAlarmLevelTypeEnum" name="AlarmLevelTypeEnum"/>
-  <!--com.guardian.historyRecord-->
-  <!---->
-  <type class="BAlarmCountHistoryRecord" name="AlarmCountHistoryRecord"/>
-  <type class="BAlarmLogRecord" name="AlarmLogRecord"/>
-  <type class="BAlarmOpenRecord" name="AlarmOpenRecord"/>
-  <type class="BBooleanHistoryRecord" name="BooleanHistoryRecord"/>
-  <type class="BDeviceSummaryRecord" name="DeviceSummaryRecord"/>
-  <type class="BEnergyIntervalRecord" name="EnergyIntervalRecord"/>
-  <type class="BEnumHistoryRecord" name="EnumHistoryRecord"/>
-  <type class="BFeeIntervalRecord" name="FeeIntervalRecord"/>
-  <type class="BGpsPositionHistoryRecord" name="GpsPositionHistoryRecord"/>
-  <type class="BLogTrendRecord" name="LogTrendRecord"/>
-  <type class="BNumericHistoryRecord" name="NumericHistoryRecord"/>
-  <type class="BRunCountHistoryRecord" name="RunCountHistoryRecord"/>
-  <type class="BStationSummaryRecord" name="StationSummaryRecord"/>
-  <type class="BStringHistoryRecord" name="StringHistoryRecord"/>
   <!--com.guardian.history.records-->
   <type class="com.guardian.history.records.BAlarmCountHistoryRecord" name="AlarmCountHistoryRecord"/>
   <type class="com.guardian.history.records.BAlarmLogRecord" name="AlarmLogRecord"/>
