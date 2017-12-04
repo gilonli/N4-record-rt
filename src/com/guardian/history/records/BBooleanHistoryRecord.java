@@ -19,46 +19,19 @@ import java.io.IOException;
  */
 @NiagaraType
 @NiagaraProperty(
-        name = "typeTag",
-        type = "BHistoryTagEnum",
-        defaultValue = "BHistoryTagEnum.DEFAULT"
-)
-@NiagaraProperty(
         name = "value",
         type = "boolean",
-        defaultValue = "false"
+        defaultValue = "false",
+        flags = Flags.SUMMARY
 )
 public final class BBooleanHistoryRecord
-        extends BTrendRecord
-        implements JSONSupport
+        extends BValueHistoryRecord
 {
 
-/*+ ------------ BEGIN BAJA AUTO GENERATED CODE ------------ +*/
-/*@ $BBooleanHistoryRecord(1289160094)1.0$ @*/
-/* Generated Thu Nov 09 09:51:36 CST 2017 by Slot-o-Matic (c) Tridium, Inc. 2012 */
 
-////////////////////////////////////////////////////////////////
-// Property "typeTag"
-////////////////////////////////////////////////////////////////
-  
-  /**
-   * Slot for the {@code typeTag} property.
-   * @see #getTypeTag
-   * @see #setTypeTag
-   */
-  public static final Property typeTag = newProperty(0, BHistoryTagEnum.DEFAULT, null);
-  
-  /**
-   * Get the {@code typeTag} property.
-   * @see #typeTag
-   */
-  public BHistoryTagEnum getTypeTag() { return (BHistoryTagEnum)get(typeTag); }
-  
-  /**
-   * Set the {@code typeTag} property.
-   * @see #typeTag
-   */
-  public void setTypeTag(BHistoryTagEnum v) { set(typeTag, v, null); }
+/*+ ------------ BEGIN BAJA AUTO GENERATED CODE ------------ +*/
+/*@ $com.guardian.history.records.BBooleanHistoryRecord(3884812961)1.0$ @*/
+/* Generated Mon Dec 04 10:21:32 CST 2017 by Slot-o-Matic (c) Tridium, Inc. 2012 */
 
 ////////////////////////////////////////////////////////////////
 // Property "value"
@@ -69,7 +42,7 @@ public final class BBooleanHistoryRecord
    * @see #getValue
    * @see #setValue
    */
-  public static final Property value = newProperty(0, false, null);
+  public static final Property value = newProperty(Flags.SUMMARY, false, null);
   
   /**
    * Get the {@code value} property.

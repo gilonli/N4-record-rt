@@ -23,15 +23,21 @@ import java.io.IOException;
         type = "BHistoryTagEnum",
         defaultValue = "BHistoryTagEnum.DEFAULT"
 )
+@NiagaraProperty(
+        name = "value",
+        type = "String",
+        defaultValue = "",
+        flags = Flags.SUMMARY
+)
 public final class BStringHistoryRecord
-        extends BStringTrendRecord
-        implements JSONSupport
+        extends BValueHistoryRecord
 {
 
 
+
 /*+ ------------ BEGIN BAJA AUTO GENERATED CODE ------------ +*/
-/*@ $BStringHistoryRecord(684669717)1.0$ @*/
-/* Generated Mon Nov 13 08:34:21 CST 2017 by Slot-o-Matic (c) Tridium, Inc. 2012 */
+/*@ $com.guardian.history.records.BStringHistoryRecord(1248416263)1.0$ @*/
+/* Generated Mon Dec 04 10:21:32 CST 2017 by Slot-o-Matic (c) Tridium, Inc. 2012 */
 
 ////////////////////////////////////////////////////////////////
 // Property "typeTag"
@@ -57,6 +63,29 @@ public final class BStringHistoryRecord
   public void setTypeTag(BHistoryTagEnum v) { set(typeTag, v, null); }
 
 ////////////////////////////////////////////////////////////////
+// Property "value"
+////////////////////////////////////////////////////////////////
+  
+  /**
+   * Slot for the {@code value} property.
+   * @see #getValue
+   * @see #setValue
+   */
+  public static final Property value = newProperty(Flags.SUMMARY, "", null);
+  
+  /**
+   * Get the {@code value} property.
+   * @see #value
+   */
+  public String getValue() { return getString(value); }
+  
+  /**
+   * Set the {@code value} property.
+   * @see #value
+   */
+  public void setValue(String v) { setString(value, v, null); }
+
+////////////////////////////////////////////////////////////////
 // Type
 ////////////////////////////////////////////////////////////////
   
@@ -66,16 +95,34 @@ public final class BStringHistoryRecord
 
 /*+ ------------ END BAJA AUTO GENERATED CODE -------------- +*/
 
+    /**
+     *
+     * @return
+     */
+    @Override
+    public boolean isFixedSize() {
+        return false;
+    }
+
     @Override
     protected void doReadTrend(DataInput in) throws IOException {
-        super.doReadTrend(in);
         this.setTypeTag(BHistoryTagEnum.make(in.readInt()));
+        this.setValue(in.readUTF());
     }
 
     @Override
     protected void doWriteTrend(DataOutput out) throws IOException {
-        super.doWriteTrend(out);
         out.writeInt(this.getTypeTag().getOrdinal());
+        out.writeUTF(this.getValue());
+    }
+
+    /**
+     *
+     * @return
+     */
+    @Override
+    public Property getValueProperty() {
+        return value;
     }
 
     /**

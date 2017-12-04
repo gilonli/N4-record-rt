@@ -21,11 +21,6 @@ import java.io.IOException;
  */
 @NiagaraType
 @NiagaraProperty(
-        name = "typeTag",
-        type = "BHistoryTagEnum",
-        defaultValue = "BHistoryTagEnum.DEFAULT"
-)
-@NiagaraProperty(
         name = "longitude",
         type = "String",defaultValue = "nan"
 )
@@ -75,35 +70,11 @@ import java.io.IOException;
         defaultValue = "nan"
 )
 public final class BGpsPositionHistoryRecord
-        extends BTrendRecord
-        implements JSONSupport
+        extends BValueHistoryRecord
 {
 /*+ ------------ BEGIN BAJA AUTO GENERATED CODE ------------ +*/
-/*@ $BGpsPositionHistoryRecord(2818570412)1.0$ @*/
-/* Generated Thu Nov 09 09:51:37 CST 2017 by Slot-o-Matic (c) Tridium, Inc. 2012 */
-
-////////////////////////////////////////////////////////////////
-// Property "typeTag"
-////////////////////////////////////////////////////////////////
-  
-  /**
-   * Slot for the {@code typeTag} property.
-   * @see #getTypeTag
-   * @see #setTypeTag
-   */
-  public static final Property typeTag = newProperty(0, BHistoryTagEnum.DEFAULT, null);
-  
-  /**
-   * Get the {@code typeTag} property.
-   * @see #typeTag
-   */
-  public BHistoryTagEnum getTypeTag() { return (BHistoryTagEnum)get(typeTag); }
-  
-  /**
-   * Set the {@code typeTag} property.
-   * @see #typeTag
-   */
-  public void setTypeTag(BHistoryTagEnum v) { set(typeTag, v, null); }
+/*@ $com.guardian.history.records.BGpsPositionHistoryRecord(1262213261)1.0$ @*/
+/* Generated Mon Dec 04 10:21:31 CST 2017 by Slot-o-Matic (c) Tridium, Inc. 2012 */
 
 ////////////////////////////////////////////////////////////////
 // Property "longitude"

@@ -1,5 +1,9 @@
 # Change Log
 
+## record-rt v2.0 - Released on Dec 4, 2017
+* 增加基类**abstract [BValueHistoryRecord](./doc/records/ValueHistory.md)**，并将typeTag属性和JSONSupport引用一并声明
+* [EnumHistoryRecord](./doc/records/EnumHistory.md)和[StringHistoryRecord](./doc/records/StringHistory.md)基于[BValueHistoryRecord](./doc/records/ValueHistory.md)重写
+
 ## record-rt v1.5 - Released on Nov 23, 2017
 * fix [module-include.xml](module-include.xml)
 

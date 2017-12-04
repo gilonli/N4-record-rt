@@ -1,11 +1,10 @@
 # BGpsPositionHistoryRecord
-extends **BTrendRecord**  
+extends **BValueHistoryRecord**  
 GPS轨迹记录
 
 ## 增加字段
 | 字段名 | 数据类型 | 默认值 | 说明 |
 |:-------:|:------:|:-------:|:------------|
-| typeTag | [BHistoryTagEnum](../enums/HistoryTagEnum.md) | [BHistoryTagEnum](../enums/HistoryTagEnum.md).DEFAULT | 记录数据的统计时间类型 |
 | longitude | String | "nan" | 经度值 |
 | longitudeTag | [BLngTagEnum](../enums/LngTagEnum.md) | [BLngTagEnum](../enums/LngTagEnum.md).east | 经度方向 |
 | latitude | String | "nan" | 纬度值 |

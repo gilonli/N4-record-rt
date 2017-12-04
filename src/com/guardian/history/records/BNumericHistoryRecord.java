@@ -20,46 +20,19 @@ import java.text.DecimalFormat;
  */
 @NiagaraType
 @NiagaraProperty(
-        name = "typeTag",
-        type = "BHistoryTagEnum",
-        defaultValue = "BHistoryTagEnum.DEFAULT"
-)
-@NiagaraProperty(
         name = "value",
         type = "double",
-        defaultValue = "0.0d"
+        defaultValue = "0.0d",
+        flags = Flags.SUMMARY
 )
 public final class BNumericHistoryRecord
-        extends BTrendRecord
-        implements JSONSupport
+        extends BValueHistoryRecord
 {
 
-/*+ ------------ BEGIN BAJA AUTO GENERATED CODE ------------ +*/
-/*@ $BNumericHistoryRecord(60634108)1.0$ @*/
-/* Generated Thu Nov 09 09:51:37 CST 2017 by Slot-o-Matic (c) Tridium, Inc. 2012 */
 
-////////////////////////////////////////////////////////////////
-// Property "typeTag"
-////////////////////////////////////////////////////////////////
-  
-  /**
-   * Slot for the {@code typeTag} property.
-   * @see #getTypeTag
-   * @see #setTypeTag
-   */
-  public static final Property typeTag = newProperty(0, BHistoryTagEnum.DEFAULT, null);
-  
-  /**
-   * Get the {@code typeTag} property.
-   * @see #typeTag
-   */
-  public BHistoryTagEnum getTypeTag() { return (BHistoryTagEnum)get(typeTag); }
-  
-  /**
-   * Set the {@code typeTag} property.
-   * @see #typeTag
-   */
-  public void setTypeTag(BHistoryTagEnum v) { set(typeTag, v, null); }
+/*+ ------------ BEGIN BAJA AUTO GENERATED CODE ------------ +*/
+/*@ $com.guardian.history.records.BNumericHistoryRecord(2576856459)1.0$ @*/
+/* Generated Mon Dec 04 10:21:32 CST 2017 by Slot-o-Matic (c) Tridium, Inc. 2012 */
 
 ////////////////////////////////////////////////////////////////
 // Property "value"
@@ -70,7 +43,7 @@ public final class BNumericHistoryRecord
    * @see #getValue
    * @see #setValue
    */
-  public static final Property value = newProperty(0, 0.0d, null);
+  public static final Property value = newProperty(Flags.SUMMARY, 0.0d, null);
   
   /**
    * Get the {@code value} property.

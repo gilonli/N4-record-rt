@@ -20,27 +20,29 @@
 
 ***
 ## RECORDS
+基类**abstract [BValueHistoryRecord](./doc/records/ValueHistory.md)**  
 
 | 名称 | 说明 | 父类 |
 |:-------------|:----------------|:------------|
-| [AlarmCountHistoryRecord](./doc/records/AlarmCountHistory.md) | 报警统计记录 | BTrendRecord |
+| [AlarmCountHistoryRecord](./doc/records/AlarmCountHistory.md) | 报警统计记录 | BValueHistoryRecord |
 | [AlarmLogRecord](./doc/records/AlarmLogRecord.md) | 报警日志记录 | BHistoryRecord |
 | [AlarmOpenRecord](./doc/records/AlarmOpenRecord.md) | 未恢复的报警记录 | BHistoryRecord |
-| [BooleanHistoryRecord](./doc/records/BooleanHistory.md) | 布尔值记录 | BTrendRecord |
-| [DeviceSummaryRecord](./doc/records/DeviceSummary.md) | 设备状态记录 | BTrendRecord |
-| [EnergyIntervalRecord](./doc/records/EnergyInterval.md) | 能耗定时记录 | BTrendRecord |
-| [EnumHistoryRecord](./doc/records/EnumHistory.md) | 枚举值记录 | BEnumTrendRecord |
-| [FeeIntervalRecord](./doc/records/FeeInterval.md) | 费用定时记录 | BTrendRecord |
-| [GpsPositionHistoryRecord](./doc/records/GpsPositionHistory.md) | GPS轨迹记录 | BTrendRecord |
+| [BooleanHistoryRecord](./doc/records/BooleanHistory.md) | 布尔值记录 | BValueHistoryRecord |
+| [DeviceSummaryRecord](./doc/records/DeviceSummary.md) | 设备状态记录 | BValueHistoryRecord |
+| [EnergyIntervalRecord](./doc/records/EnergyInterval.md) | 能耗定时记录 | BValueHistoryRecord |
+| [EnumHistoryRecord](./doc/records/EnumHistory.md) | 枚举值记录 | BValueHistoryRecord |
+| [FeeIntervalRecord](./doc/records/FeeInterval.md) | 费用定时记录 | BValueHistoryRecord |
+| [GpsPositionHistoryRecord](./doc/records/GpsPositionHistory.md) | GPS轨迹记录 | BValueHistoryRecord |
 | [LogTrendRecord](./doc/records/LogTrend.md) | 日志记录 | BHistoryRecord |
-| [NumericHistoryRecord](./doc/records/NumericHistory.md) | 模拟量记录 | BTrendRecord |
-| [RunCountHistoryRecord](./doc/records/RunCountHistory.md) | 运行状态统计记录 | BTrendRecord |
-| [StationSummaryRecord](./doc/records/StationSummary.md) | 站点状态记录 | BTrendRecord |
-| [StringHistoryRecord](./doc/records/StringHistory.md) | 字符串记录 | BStringTrendRecord |
+| [NumericHistoryRecord](./doc/records/NumericHistory.md) | 模拟量记录 | BValueHistoryRecord |
+| [RunCountHistoryRecord](./doc/records/RunCountHistory.md) | 运行状态统计记录 | BValueHistoryRecord |
+| [StationSummaryRecord](./doc/records/StationSummary.md) | 站点状态记录 | BValueHistoryRecord |
+| [StringHistoryRecord](./doc/records/StringHistory.md) | 字符串记录 | BValueHistoryRecord |
 
 ***
 ## JSON
 继承JSONObject和JSONArray的类[JSONObj](src/com/guardian/json/JSONObj.java)和[JSONList](src/com/guardian/json/JSONList.java)，覆盖了原`toString()`方法，处理了生成字符串时unicode编码"$u"开头的问题
+
 ***
 ## lexicon
 默认[lexicon](module.lexicon)为中文，在生成jar中包含[record.lexicon](src/lexicons/record.lexicon)为英文
