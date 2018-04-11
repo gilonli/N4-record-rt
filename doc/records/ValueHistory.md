@@ -1,4 +1,4 @@
-# ##abstract## BValueHistoryRecord
+# **abstract** BValueHistoryRecord
 extends **BTrendRecord**
 历史记录基本类型
 

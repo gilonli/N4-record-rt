@@ -1,5 +1,9 @@
 # Change Log
 
+## record-rt v3.0.1 - Released on April 11, 2018
+* 增加**消息记录**类型[BMessageTrendRecord](./doc/records/MessageTrend.md)的note字段
+* 修正文档
+
 ## record-rt v3.0 - Released on April 11, 2018
 * 增加**消息记录**类型[BMessageTrendRecord](./doc/records/MessageTrend.md)
 * 修正[record.lexicon](src/lexicons/record.lexicon)中runCount名称错误问题

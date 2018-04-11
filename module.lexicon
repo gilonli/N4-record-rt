@@ -201,6 +201,7 @@ api.json.message.receiver.name=n
 api.json.message.receiver.address=a
 api.json.message.type=p
 api.json.message.text=m
+api.json.message.note=i
 
 api.json.numericHistory.timestamp.mills=t
 api.json.numericHistory.value=v

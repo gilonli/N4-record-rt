@@ -37,13 +37,18 @@ import java.io.IOException;
         type = "String",
         defaultValue = "-"
 )
+@NiagaraProperty(
+        name = "note",
+        type = "String",
+        defaultValue = "-"
+)
 public class BMessageTrendRecord
         extends BHistoryRecord
         implements JSONSupport
 {
 /*+ ------------ BEGIN BAJA AUTO GENERATED CODE ------------ +*/
-/*@ $com.guardian.history.records.BMessageTrendRecord(2725455819)1.0$ @*/
-/* Generated Wed Apr 11 08:40:27 CST 2018 by Slot-o-Matic (c) Tridium, Inc. 2012 */
+/*@ $com.guardian.history.records.BMessageTrendRecord(2248826820)1.0$ @*/
+/* Generated Wed Apr 11 14:00:05 CST 2018 by Slot-o-Matic (c) Tridium, Inc. 2012 */
 
 ////////////////////////////////////////////////////////////////
 // Property "time"
@@ -161,6 +166,29 @@ public class BMessageTrendRecord
   public void setMessageText(String v) { setString(messageText, v, null); }
 
 ////////////////////////////////////////////////////////////////
+// Property "note"
+////////////////////////////////////////////////////////////////
+  
+  /**
+   * Slot for the {@code note} property.
+   * @see #getNote
+   * @see #setNote
+   */
+  public static final Property note = newProperty(0, "-", null);
+  
+  /**
+   * Get the {@code note} property.
+   * @see #note
+   */
+  public String getNote() { return getString(note); }
+  
+  /**
+   * Set the {@code note} property.
+   * @see #note
+   */
+  public void setNote(String v) { setString(note, v, null); }
+
+////////////////////////////////////////////////////////////////
 // Type
 ////////////////////////////////////////////////////////////////
   
@@ -188,6 +216,7 @@ public class BMessageTrendRecord
         this.setReceiverName(in.readUTF());
         this.setReceiverAddress(in.readUTF());
         this.setMessageText(in.readUTF());
+        this.setNote(in.readUTF());
     }
 
     /**
@@ -201,6 +230,7 @@ public class BMessageTrendRecord
         out.writeUTF(this.getReceiverName());
         out.writeUTF(this.getReceiverAddress());
         out.writeUTF(this.getMessageText());
+        out.writeUTF(this.getNote());
     }
 
     /**
@@ -218,12 +248,14 @@ public class BMessageTrendRecord
                                    String msgType,
                                    String receiver,
                                    String msgToAddress,
-                                   String text) {
+                                   String text,
+                                   String note) {
         this.setTime(timestamp);
         this.setMessageType(msgType);
         this.setReceiverName(receiver);
         this.setReceiverAddress(msgToAddress);
         this.setMessageText(text);
+        this.setNote(note);
         return this;
     }
 
@@ -265,6 +297,7 @@ public class BMessageTrendRecord
         jsonObj.put(this.getLexicon().get("api.json.message.receiver.name"), this.getReceiverName());
         jsonObj.put(this.getLexicon().get("api.json.message.receiver.address"), this.getReceiverAddress());
         jsonObj.put(this.getLexicon().get("api.json.message.text"), this.getMessageText());
+        jsonObj.put(this.getLexicon().get("api.json.message.note"), this.getNote());
         return jsonObj;
     }
 
