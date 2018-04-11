@@ -1,5 +1,9 @@
 # Change Log
 
+## record-rt v3.0 - Released on April 11, 2018
+* 增加**消息记录**类型[BMessageTrendRecord](./doc/records/MessageTrend.md)
+* 修正[record.lexicon](src/lexicons/record.lexicon)中runCount名称错误问题
+
 ## record-rt v2.0.1 - Released on Dec 6, 2017
 * 修正[AlarmCountHistoryRecord](./doc/records/AlarmCountHistory.md)和[RunCountHistoryRecord](./doc/records/RunCountHistory.md)中的set方法
 * 修正[EnumHistoryRecord](./doc/records/EnumHistory.md)和[StringHistoryRecord](./doc/records/StringHistory.md)中typeTag属性重复问题
