@@ -39,11 +39,11 @@ extends **BValueHistoryRecord**
 api.json.value.runCount.value.true=run
 api.json.value.runCount.value.false=stop
 
-json.api.runCount.timestamp=time
-json.api.runCount.tag=tag
-json.api.runCount.value=value
-json.api.runCount.startCount=count
-json.api.runCount.startFrom.mills=start
-json.api.runCount.endAt.mills=end
-json.api.runCount.keptTime.mills=kept
+api.json.runCount.timestamp=time
+api.json.runCount.tag=tag
+api.json.runCount.value=value
+api.json.runCount.startCount=count
+api.json.runCount.startFrom.mills=start
+api.json.runCount.endAt.mills=end
+api.json.runCount.keptTime.mills=kept
 ```

@@ -34,6 +34,7 @@
 | [FeeIntervalRecord](./doc/records/FeeInterval.md) | 费用定时记录 | BValueHistoryRecord |
 | [GpsPositionHistoryRecord](./doc/records/GpsPositionHistory.md) | GPS轨迹记录 | BValueHistoryRecord |
 | [LogTrendRecord](./doc/records/LogTrend.md) | 日志记录 | BHistoryRecord |
+| [MessageTrendRecord](./doc/records/MessageTrend.md) | 消息记录 | BHistoryRecord |
 | [NumericHistoryRecord](./doc/records/NumericHistory.md) | 模拟量记录 | BValueHistoryRecord |
 | [RunCountHistoryRecord](./doc/records/RunCountHistory.md) | 运行状态统计记录 | BValueHistoryRecord |
 | [StationSummaryRecord](./doc/records/StationSummary.md) | 站点状态记录 | BValueHistoryRecord |
@@ -45,4 +46,4 @@
 
 ***
 ## lexicon
-默认[lexicon](module.lexicon)为中文，在生成jar中包含[record.lexicon](src/lexicons/record.lexicon)为英文
+默认[lexicon](module.lexicon)为中文，在生成jar中包含[lexicon/en.lexicon](src/lexicons/en.lexicon)为英文

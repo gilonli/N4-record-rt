@@ -27,8 +27,6 @@ import java.io.IOException;
 public final class BBooleanHistoryRecord
         extends BValueHistoryRecord
 {
-
-
 /*+ ------------ BEGIN BAJA AUTO GENERATED CODE ------------ +*/
 /*@ $com.guardian.history.records.BBooleanHistoryRecord(3884812961)1.0$ @*/
 /* Generated Mon Dec 04 10:21:32 CST 2017 by Slot-o-Matic (c) Tridium, Inc. 2012 */

@@ -9,7 +9,7 @@ description     = "history record and reference enums, and json support"
 ext {
   name            = "record"
   project.group   = "guardian"
-  project.version = "2.0"
+  project.version = "3.0"
   description = "history record and reference enums, and json support"
 }
 
@@ -29,5 +29,6 @@ dependencies {
 
 jar{
     from("src/lexicons"){
+        into("lexicons")
     }
 }

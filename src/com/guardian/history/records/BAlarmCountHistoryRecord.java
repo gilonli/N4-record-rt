@@ -237,6 +237,7 @@ public final class BAlarmCountHistoryRecord
                                         boolean   value,
                                         int   count,
                                         BAbsTime   startFrom,
+                                        BRelTime   keptTime,
                                         BStatus  status)
     {
         this.setTimestamp(timestamp);
@@ -245,7 +246,36 @@ public final class BAlarmCountHistoryRecord
         this.setCount(count);
         this.setStartFrom(startFrom);
         this.setEndAt(BAbsTime.now());
-        this.setKeptTime(this.getStartFrom().delta(BAbsTime.now()));
+        this.setKeptTime(keptTime);
+        this.setStatus(status);
+        return this;
+    }
+
+    /**
+     *
+     * @param timestamp
+     * @param tag
+     * @param value
+     * @param count
+     * @param startFrom
+     * @return
+     */
+    public BAlarmCountHistoryRecord set(BAbsTime timestamp,
+                                        BHistoryTagEnum   tag,
+                                        boolean   value,
+                                        int   count,
+                                        BAbsTime   startFrom,
+                                        BAbsTime   endAt,
+                                        BRelTime   keptTime,
+                                        BStatus  status)
+    {
+        this.setTimestamp(timestamp);
+        this.setTypeTag(tag);
+        this.setValue(value);
+        this.setCount(count);
+        this.setStartFrom(startFrom);
+        this.setEndAt(endAt);
+        this.setKeptTime(keptTime);
         this.setStatus(status);
         return this;
     }

@@ -19,11 +19,6 @@ import java.io.IOException;
  */
 @NiagaraType
 @NiagaraProperty(
-        name = "typeTag",
-        type = "BHistoryTagEnum",
-        defaultValue = "BHistoryTagEnum.DEFAULT"
-)
-@NiagaraProperty(
         name = "value",
         type = "BDynamicEnum",
         defaultValue = "BDynamicEnum.DEFAULT"
@@ -32,33 +27,9 @@ public final class BEnumHistoryRecord
         extends BValueHistoryRecord
 {
 
-
 /*+ ------------ BEGIN BAJA AUTO GENERATED CODE ------------ +*/
-/*@ $com.guardian.history.records.BEnumHistoryRecord(3357423177)1.0$ @*/
-/* Generated Mon Dec 04 10:22:04 CST 2017 by Slot-o-Matic (c) Tridium, Inc. 2012 */
-
-////////////////////////////////////////////////////////////////
-// Property "typeTag"
-////////////////////////////////////////////////////////////////
-  
-  /**
-   * Slot for the {@code typeTag} property.
-   * @see #getTypeTag
-   * @see #setTypeTag
-   */
-  public static final Property typeTag = newProperty(0, BHistoryTagEnum.DEFAULT, null);
-  
-  /**
-   * Get the {@code typeTag} property.
-   * @see #typeTag
-   */
-  public BHistoryTagEnum getTypeTag() { return (BHistoryTagEnum)get(typeTag); }
-  
-  /**
-   * Set the {@code typeTag} property.
-   * @see #typeTag
-   */
-  public void setTypeTag(BHistoryTagEnum v) { set(typeTag, v, null); }
+/*@ $com.guardian.history.records.BEnumHistoryRecord(3275960801)1.0$ @*/
+/* Generated Wed Dec 06 14:25:01 CST 2017 by Slot-o-Matic (c) Tridium, Inc. 2012 */
 
 ////////////////////////////////////////////////////////////////
 // Property "value"

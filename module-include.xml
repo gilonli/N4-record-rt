@@ -28,4 +28,5 @@
   <type class="com.guardian.history.records.BStationSummaryRecord" name="StationSummaryRecord"/>
   <type class="com.guardian.history.records.BStringHistoryRecord" name="StringHistoryRecord"/>
   <type class="com.guardian.history.records.BValueHistoryRecord" name="ValueHistoryRecord"/>
+  <type class="com.guardian.history.records.BMessageTrendRecord" name="MessageTrendRecord"/>
 </types>

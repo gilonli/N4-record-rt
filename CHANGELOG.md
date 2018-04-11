@@ -1,5 +1,9 @@
 # Change Log
 
+## record-rt v2.0.1 - Released on Dec 6, 2017
+* 修正[AlarmCountHistoryRecord](./doc/records/AlarmCountHistory.md)和[RunCountHistoryRecord](./doc/records/RunCountHistory.md)中的set方法
+* 修正[EnumHistoryRecord](./doc/records/EnumHistory.md)和[StringHistoryRecord](./doc/records/StringHistory.md)中typeTag属性重复问题
+
 ## record-rt v2.0 - Released on Dec 4, 2017
 * 增加基类**abstract [BValueHistoryRecord](./doc/records/ValueHistory.md)**，并将typeTag属性和JSONSupport引用一并声明
 * [EnumHistoryRecord](./doc/records/EnumHistory.md)和[StringHistoryRecord](./doc/records/StringHistory.md)基于[BValueHistoryRecord](./doc/records/ValueHistory.md)重写

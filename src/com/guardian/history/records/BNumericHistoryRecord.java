@@ -28,8 +28,6 @@ import java.text.DecimalFormat;
 public final class BNumericHistoryRecord
         extends BValueHistoryRecord
 {
-
-
 /*+ ------------ BEGIN BAJA AUTO GENERATED CODE ------------ +*/
 /*@ $com.guardian.history.records.BNumericHistoryRecord(2576856459)1.0$ @*/
 /* Generated Mon Dec 04 10:21:32 CST 2017 by Slot-o-Matic (c) Tridium, Inc. 2012 */

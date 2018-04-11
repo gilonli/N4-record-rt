@@ -110,7 +110,6 @@ import java.io.IOException;
         defaultValue = "0",
         flags = Flags.READONLY
 )
-
 public final class BAlarmLogRecord
         extends BHistoryRecord
         implements JSONSupport

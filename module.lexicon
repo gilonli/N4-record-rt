@@ -196,17 +196,23 @@ api.json.gpsPosition.satelliteCount=satellites
 api.json.log.timeStamp.mills=t
 api.json.log.text=l
 
+api.json.message.timeStamp.mills=t
+api.json.message.receiver.name=n
+api.json.message.receiver.address=a
+api.json.message.type=p
+api.json.message.text=m
+
 api.json.numericHistory.timestamp.mills=t
 api.json.numericHistory.value=v
 api.json.numericHistory.statue=s
 
-json.api.runCount.timestamp=time
-json.api.runCount.tag=tag
-json.api.runCount.value=value
-json.api.runCount.startCount=count
-json.api.runCount.startFrom.mills=start
-json.api.runCount.endAt.mills=end
-json.api.runCount.keptTime.mills=kept
+api.json.runCount.timestamp=time
+api.json.runCount.tag=tag
+api.json.runCount.value=value
+api.json.runCount.startCount=count
+api.json.runCount.startFrom.mills=start
+api.json.runCount.endAt.mills=end
+api.json.runCount.keptTime.mills=kept
 
 api.json.stationSummary.typeTag=tag
 api.json.stationSummary.deviceCount=deviceCount
