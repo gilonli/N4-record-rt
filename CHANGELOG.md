@@ -1,6 +1,6 @@
 # Change Log
 
-## record-rt v3.0.2 - Released on July 28, 2018
+## record-rt v3.1 - Released on July 28, 2018
 * 增加**时间格式化**类型[TimeFormatter](./doc/TimeFormatter.md)
 
 ## record-rt v3.0.1 - Released on April 11, 2018
