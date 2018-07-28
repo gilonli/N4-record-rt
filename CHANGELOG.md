@@ -1,5 +1,8 @@
 # Change Log
 
+## record-rt v3.0.2 - Released on July 28, 2018
+* 增加**时间格式化**类型[TimeFormatter](./doc/TimeFormatter.md)
+
 ## record-rt v3.0.1 - Released on April 11, 2018
 * 增加**消息记录**类型[BMessageTrendRecord](./doc/records/MessageTrend.md)的note字段
 * 修正文档

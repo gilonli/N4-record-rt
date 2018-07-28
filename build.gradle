@@ -9,7 +9,7 @@ description     = "history record and reference enums, and json support"
 ext {
   name            = "record"
   project.group   = "guardian"
-  project.version = "3.0.1"
+  project.version = "3.0.2"
   description = "history record and reference enums, and json support"
 }
 
